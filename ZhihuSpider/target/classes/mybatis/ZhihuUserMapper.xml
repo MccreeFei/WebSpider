@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.mccreefei.zhihu.dao.ZhihuUserDao">
+    <insert id="addZhihuUser" parameterType="cn.mccreefei.zhihu.model.ZhihuUser">
+        insert ignore into zhihu_user
+         <trim prefix="(" suffix=")" suffixOverrides=",">
+             <if test="characterUrl != null">
+                 character_url,
+             </if>
+             <if test="headUrl != null" >
+                 head_url,
+             </if>
+             <if test="userName != null" >
+                 user_name,
+             </if>
+             <if test="simpleDescription != null" >
+                 simple_description,
+             </if>
+             <if test="thanks != null" >
+                 thanks,
+             </if>
+             <if test="agrees != null" >
+                 agrees,
+             </if>
+             <if test="collects != null" >
+                 collects,
+             </if>
+             <if test="followers != null" >
+                 followers,
+             </if>
+             <if test="followees != null" >
+                 followees,
+             </if>
+             <if test="createTime != null" >
+                 create_time,
+             </if>
+         </trim>
+
+        <trim prefix="values(" suffix=")" suffixOverrides=",">
+            <if test="characterUrl != null">
+                #{characterUrl},
+            </if>
+            <if test="headUrl != null" >
+                #{headUrl},
+            </if>
+            <if test="userName != null" >
+                #{userName},
+            </if>
+            <if test="simpleDescription != null" >
+                #{simpleDescription},
+            </if>
+            <if test="thanks != null" >
+                #{thanks},
+            </if>
+            <if test="agrees != null" >
+                #{agrees},
+            </if>
+            <if test="collects != null" >
+                #{collects},
+            </if>
+            <if test="followers != null" >
+                #{followers},
+            </if>
+            <if test="followees != null" >
+                #{followees},
+            </if>
+            <if test="createTime != null" >
+                #{createTime},
+            </if>
+        </trim>
+    </insert>
+
+</mapper>
