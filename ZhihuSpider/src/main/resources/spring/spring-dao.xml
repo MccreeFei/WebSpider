@@ -6,7 +6,7 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
     <context:component-scan base-package="cn.mccreefei.zhihu" />
-    <context:property-placeholder location="classpath:db.properties"/>
+    <context:property-placeholder location="classpath:db.properties, zhihu.properties"/>
 
     <bean id="datasource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
@@ -34,6 +34,12 @@
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="cn.mccreefei.zhihu.dao"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+    </bean>
+
+    <!-- phantomJSDownloader -->
+    <bean class="us.codecraft.webmagic.downloader.PhantomJSDownloader">
+        <constructor-arg name="crawlJsPath" value="${CRAWL_JS_FILE_PATH}" />
+        <constructor-arg name="phantomJsCommand" value="${PHANTOMJS_PATH}" />
     </bean>
 
 
