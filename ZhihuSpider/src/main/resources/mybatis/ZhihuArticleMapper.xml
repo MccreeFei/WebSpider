@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.mccreefei.zhihu.dao.ZhihuArticleDao">
+    <insert id="addZhihuArticle" parameterType="cn.mccreefei.zhihu.model.ZhihuArticle">
+        insert ignore into zhihu_article
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="characterUrl != null">
+                character_url,
+            </if>
+            <if test="articleTitle != null">
+                article_title,
+            </if>
+            <if test="agrees != null">
+                agrees,
+            </if>
+            <if test="comments != null">
+                comments,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="articleUrl != null">
+                article_url,
+            </if>
+        </trim>
+
+        <trim prefix="values(" suffix=")" suffixOverrides=",">
+            <if test="characterUrl != null">
+                #{characterUrl},
+            </if>
+            <if test="articleTitle != null">
+                #{articleTitle},
+            </if>
+            <if test="agrees != null">
+                #{agrees},
+            </if>
+            <if test="comments != null">
+                #{comments},
+            </if>
+            <if test="createTime != null">
+                #{createTime},
+            </if>
+            <if test="articleUrl != null">
+                #{articleUrl},
+            </if>
+        </trim>
+    </insert>
+
+</mapper>
