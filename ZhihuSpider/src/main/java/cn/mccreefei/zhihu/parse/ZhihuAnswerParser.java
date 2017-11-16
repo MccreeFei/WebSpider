@@ -1,5 +1,6 @@
 package cn.mccreefei.zhihu.parse;
 
+import cn.mccreefei.zhihu.exception.ParseException;
 import cn.mccreefei.zhihu.model.ZhihuAnswer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -37,6 +38,9 @@ public class ZhihuAnswerParser {
             List<String> itemList = page.getHtml().xpath("//div[@id='Profile-answers']//div[@class='List-item']").all();
             if (itemList != null && itemList.size() > 0) {
                 log.info("start parse answer from url : {}", url);
+                if (url.equals("https://www.zhihu.com/people/feifeimao/answers/by_votes")){
+                    System.out.println("1");
+                }
                 for (int i = 0; i < itemList.size(); i++) {
                     String item = itemList.get(i);
                     Html itemHtml = Html.create(item);
@@ -48,12 +52,12 @@ public class ZhihuAnswerParser {
                     }
 
                     //获取回答url与问题标题
-                    String answerUrl = itemHtml.xpath("h2[@class='ContentItem-title']//a/@href").get();
-                    String questionTitle = itemHtml.xpath("h2[@class='ContentItem-title']//a/text()").get();
+                    String answerUrl = itemHtml.xpath("//h2[@class='ContentItem-title']//a/@href").get();
+                    String questionTitle = itemHtml.xpath("//h2[@class='ContentItem-title']//a/text()").get();
 
                     //获取评论数
                     String commentsText = itemHtml.xpath("//div[@class='ContentItem-actions']/button/text()").get();
-                    int comments = getComments(commentsText);
+                    Integer comments = getComments(commentsText);
 
                     //获取questionId和answerId
                     Integer[] questionAndAnswerId = getQuestionAndAnswerId(answerUrl);
@@ -71,23 +75,34 @@ public class ZhihuAnswerParser {
                 }
             }
         } catch (Exception e) {
-            log.error("crawl answers from url failed! url is : {}, and the error is : {}", url, e);
+            log.error("crawl answers from url failed! url is : {}, and the error is : {}", url, e.getMessage(), e);
         }
 
     }
 
-    private int getAgrees(String agreeText) throws NumberFormatException, IndexOutOfBoundsException{
+    private int getAgrees(String agreeText) throws NumberFormatException, IndexOutOfBoundsException, ParseException{
+        if (agreeText == null) throw new ParseException("agreeText is null");
         int index = agreeText.indexOf(" 人赞同了该回答");
         return Integer.parseInt(agreeText.substring(1, index));
     }
 
-    private int getComments(String commentsText) throws NumberFormatException, IndexOutOfBoundsException{
-        int index = commentsText.indexOf(" 条评论");
-        return Integer.parseInt(commentsText.substring(1, index));
+    private Integer getComments(String commentsText){
+        Integer result = null;
+        try {
+            if (commentsText == null) throw new ParseException("commentsText is null");
+            int index = commentsText.indexOf(" 条评论");
+            result =  Integer.valueOf(commentsText.substring(1, index));
+        }catch (Exception e){
+            log.warn("parse answer comments failed!", e);
+        }
+        return result;
     }
 
     private String getCharacterUrl(String url){
         int startIndex = url.indexOf("people/") + 7;
+        if (startIndex < 7){
+            startIndex = url.indexOf("org/") + 4;
+        }
         int endIndex = url.indexOf("/answers/");
         String result = null;
         try {

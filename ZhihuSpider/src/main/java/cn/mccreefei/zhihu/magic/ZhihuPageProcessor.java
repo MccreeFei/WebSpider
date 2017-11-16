@@ -24,20 +24,21 @@ public class ZhihuPageProcessor implements PageProcessor {
     private ZhihuAnswerParser answerParser;
     private ZhihuArticleParser articleParser;
     private static final ResourceBundle resource = ResourceBundle.getBundle("zhihu");
+    private static final String FOLLOW_PAGE_REGEX = "(.*/following)|(.*/following\\?page=\\d)";
     private Site site;
 
     public ZhihuPageProcessor(){
-        int RETRY_TIMES = 0;
-        int CRAWL_SLEEP_TIME = 0;
+        int retryTimes = 0;
+        int crawlSleepTime = 0;
         try {
-            RETRY_TIMES = Integer.parseInt(resource.getString("RETRY_TIMES"));
-            CRAWL_SLEEP_TIME = Integer.parseInt(resource.getString("CRAWL_SLEEP_TIME"));
+            retryTimes = Integer.parseInt(resource.getString("RETRY_TIMES"));
+            crawlSleepTime = Integer.parseInt(resource.getString("CRAWL_SLEEP_TIME"));
         }catch (Exception e){
             log.warn("get RETRY_TIMES or CRAWL_SLEEP_TIME from resource failed! use default value 3 for RETRY_TIME and 2000 for CRAWL_SLEEP_TIME");
-            RETRY_TIMES = 3;
-            CRAWL_SLEEP_TIME = 2000;
+            retryTimes = 3;
+            crawlSleepTime = 2000;
         }
-        site = Site.me().setRetryTimes(RETRY_TIMES).setSleepTime(CRAWL_SLEEP_TIME).
+        site = Site.me().setRetryTimes(retryTimes).setSleepTime(crawlSleepTime).setCharset("utf-8").setTimeOut(10000).
                 setUserAgent("Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36");
 
     }
@@ -72,13 +73,34 @@ public class ZhihuPageProcessor implements PageProcessor {
     }
 
     protected void addTargetUrls(Page page){
-        List<String> urlList = page.getHtml().xpath("//div[@id='Profile-following']//div[@class='List-item]//div[@class='ContentItem-head']//a[@class='UserLink-link]").links().all();
-        if (urlList != null && urlList.size() > 0){
-            for (String url : urlList){
-                //page.addTargetRequest(url + "/following");
-                page.addTargetRequest(url + "/answers/by_votes");
-                //page.addTargetRequest(url + "/posts/posts_by_votes");
+        String sourceUrl = page.getRequest().getUrl();
+        try {
+            if (sourceUrl.matches(FOLLOW_PAGE_REGEX)) {
+                //以/following结尾的url将分页url添加进队列
+                if (sourceUrl.endsWith("/following")) {
+                    List<String> pageList = page.getHtml().xpath("//div[@class='Profile-main']//div[@class='Pagination']" +
+                            "/button[@class='Button PaginationButton Button--plain']/text()").all();
+
+                    if (pageList != null && pageList.size() > 0) {
+                        int maxPage = Integer.parseInt(pageList.get(pageList.size() - 1));
+                        for (int i = 2; i <= maxPage; i++) {
+                            String pageUrl = sourceUrl + "?page=" + i;
+                            page.addTargetRequest(pageUrl);
+                        }
+                    }
+                }
+                List<String> urlList = page.getHtml().xpath("//div[@id='Profile-following']//div[@class='List-item]" +
+                        "//div[@class='ContentItem-head']//a[@class='UserLink-link]").links().all();
+                if (urlList != null && urlList.size() > 0) {
+                    for (String url : urlList) {
+                        page.addTargetRequest(url + "/following");
+                        page.addTargetRequest(url + "/answers/by_votes");
+                        page.addTargetRequest(url + "/posts/posts_by_votes");
+                    }
+                }
             }
+        }catch (Exception e){
+            log.error("add target urls failed!", e);
         }
     }
 
@@ -88,7 +110,4 @@ public class ZhihuPageProcessor implements PageProcessor {
         return site;
     }
 
-    public static void main(String[] args) {
-
-    }
 }

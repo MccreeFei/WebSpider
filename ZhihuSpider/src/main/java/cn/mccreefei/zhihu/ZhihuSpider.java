@@ -35,13 +35,13 @@ public class ZhihuSpider {
     }
 
     public void crawl(String baseUrl, int threadNum){
-        Spider.create(pageProcessor).addPipeline(pipeline).setDownloader(downloader).addUrl(baseUrl)
+        Spider.create(pageProcessor).addPipeline(pipeline).addUrl(baseUrl)//.setDownloader(downloader)
                 .thread(threadNum).run();
     }
 
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath:/spring/spring-dao.xml");
         ZhihuSpider zhihuSpider = context.getBean(ZhihuSpider.class);
-        zhihuSpider.crawl("https://www.zhihu.com/people/zhou-ruo-yu-99-95/following", 1);
+        zhihuSpider.crawl("https://www.zhihu.com/people/zhou-ruo-yu-99-95/following", 10);
     }
 }

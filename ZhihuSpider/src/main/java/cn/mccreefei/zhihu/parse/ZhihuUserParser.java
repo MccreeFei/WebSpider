@@ -110,8 +110,11 @@ public class ZhihuUserParser {
     }
 
     private String getCharacterUrl(String url){
-        int endIndex = url.indexOf("/following");
         int startIndex = url.indexOf("people/") + 7;
+        if (startIndex < 7){
+            startIndex = url.indexOf("org/") + 4;
+        }
+        int endIndex = url.indexOf("/following");
         String result = null;
         try {
             result = url.substring(startIndex, endIndex);
