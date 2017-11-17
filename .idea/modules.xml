@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://E://WebSpider/WebSpider.iml" filepath="E://WebSpider/WebSpider.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ZhihuSpider/ZhihuSpider.iml" filepath="$PROJECT_DIR$/ZhihuSpider/ZhihuSpider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web-spider.iml" filepath="$PROJECT_DIR$/web-spider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ZhihuSpider/zhihu-spider.iml" filepath="$PROJECT_DIR$/ZhihuSpider/zhihu-spider.iml" />
     </modules>
   </component>
 </project>

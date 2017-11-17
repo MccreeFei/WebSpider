@@ -38,14 +38,32 @@ public class ZhihuArticleParser {
             List<String> itemList = page.getHtml().xpath("//div[@id='Profile-posts']//div[@class='List-item']").all();
             if (itemList != null && itemList.size() > 0){
                 log.info("start parse article from url : {}", url);
-                if (url.equals("https://www.zhihu.com/people/lisongwei/posts/posts_by_votes")){
-                    System.out.println("1");
+                //添加分页待爬取url
+                if (url.endsWith("/posts/posts_by_votes")){
+                    String lastItem = itemList.get(itemList.size() - 1);
+                    Html lastItemHtml = Html.create(lastItem);
+                    String lastAgreeText = lastItemHtml.xpath("//div[@class='ContentItem-meta']//div[@class='ArticleItem-extraInfo']//button//text()").get();
+                    int lastAgrees = getAgrees(lastAgreeText);
+                    if (lastAgrees > CRAWL_ARTICLE_AGREES){
+                        List<String> pageList = page.getHtml().xpath("//div[@class='Pagination']/button[@class='Button PaginationButton Button--plain']/text()").all();
+                        if (pageList != null && pageList.size() > 0){
+                            try {
+                                int maxPage = Integer.parseInt(pageList.get(pageList.size() - 1));
+                                for (int i = 2; i <= maxPage; i++) {
+                                    page.addTargetRequest(url + "?page=" + i);
+                                }
+                            }catch (Exception e){
+                                log.warn("添加分页url失败！", e);
+                            }
+                        }
+                    }
                 }
+                //解析文章列表项
                 for (int i = 0; i < itemList.size(); i++) {
                     String item = itemList.get(i);
                     Html itemHtml = Html.create(item);
                     String agreeText = itemHtml.xpath("//div[@class='ContentItem-meta']//div[@class='ArticleItem-extraInfo']//button//text()").get();
-                    Integer agrees = getAgrees(agreeText);
+                    int agrees = getAgrees(agreeText);
                     //小于赞数不再解析剩余项
                     if (agrees < CRAWL_ARTICLE_AGREES){
                         break;
@@ -54,7 +72,8 @@ public class ZhihuArticleParser {
                     String articleUrl = itemHtml.xpath("//h2[@class='ContentItem-title']").links().get();
                     String articleTitle = itemHtml.xpath("//h2[@class='ContentItem-title']//a/text()").get();
 
-                    String commentsText = itemHtml.xpath("//div[@class='ContentItem-actions']/button[@class='Button ContentItem-action Button--plain Button--withIcon Button--withLabel']/text()").get();
+                    String commentsText = itemHtml.xpath("//div[@class='ContentItem-actions']" +
+                            "/button[@class='Button ContentItem-action Button--plain Button--withIcon Button--withLabel']/text()").get();
                     Integer comments = getComments(commentsText);
 
                     ZhihuArticle article = new ZhihuArticle.ArticleBuilder().setCharacterUrl(characterUrl)

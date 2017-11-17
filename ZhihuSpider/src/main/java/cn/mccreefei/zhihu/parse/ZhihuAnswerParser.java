@@ -38,9 +38,29 @@ public class ZhihuAnswerParser {
             List<String> itemList = page.getHtml().xpath("//div[@id='Profile-answers']//div[@class='List-item']").all();
             if (itemList != null && itemList.size() > 0) {
                 log.info("start parse answer from url : {}", url);
-                if (url.equals("https://www.zhihu.com/people/feifeimao/answers/by_votes")){
-                    System.out.println("1");
+
+                //添加分页待爬取url
+                if (url.endsWith("/answers/by_votes")) {
+                    String lastItem = itemList.get(itemList.size() - 1);
+                    Html lastItemHtml = Html.create(lastItem);
+                    String lastAgreeText = lastItemHtml.xpath("//div[@class='ContentItem-meta']//div[@class='AnswerItem-extraInfo']//button//text()").get();
+                    int lastAgrees = getAgrees(lastAgreeText);
+                    if (lastAgrees > CRAWL_ANSWER_AGREES){
+                        List<String> pageList = page.getHtml().xpath("//div[@class='Pagination']/button[@class='Button PaginationButton Button--plain']/text()").all();
+                        if (pageList != null && pageList.size() > 0){
+                            try {
+                                int maxPage = Integer.parseInt(pageList.get(pageList.size() - 1));
+                                for (int j = 2; j <= maxPage; j++) {
+                                    page.addTargetRequest(url + "?page=" + j);
+                                }
+                            }catch (Exception e){
+                                log.warn("添加分页url失败！", e);
+                            }
+                        }
+                    }
                 }
+
+                //解析回答列表项
                 for (int i = 0; i < itemList.size(); i++) {
                     String item = itemList.get(i);
                     Html itemHtml = Html.create(item);

@@ -42,5 +42,10 @@
         <constructor-arg name="phantomJsCommand" value="${PHANTOMJS_PATH}" />
     </bean>
 
+    <!-- Simple SeleniumDownloader -->
+    <bean class="cn.mccreefei.zhihu.magic.SeleniumDownloader">
+        <constructor-arg name="chromeDriverPath" value="${CHROME_DRIVER_PATH}" />
+    </bean>
+
 
 </beans>

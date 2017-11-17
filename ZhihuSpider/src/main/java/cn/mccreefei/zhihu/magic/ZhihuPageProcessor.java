@@ -25,6 +25,8 @@ public class ZhihuPageProcessor implements PageProcessor {
     private ZhihuArticleParser articleParser;
     private static final ResourceBundle resource = ResourceBundle.getBundle("zhihu");
     private static final String FOLLOW_PAGE_REGEX = "(.*/following)|(.*/following\\?page=\\d)";
+    private static final String ANSWER_PAGE_REGEX = "(.*/answers/by_votes)|(.*/answers/by_votes\\?page=\\d)";
+    private static final String ARTICLE_PAGE_REGEX = "(.*/posts/posts_by_votes)|(.*/posts/posts_by_votes\\?page=\\d)";
     private Site site;
 
     public ZhihuPageProcessor(){
@@ -63,9 +65,9 @@ public class ZhihuPageProcessor implements PageProcessor {
         String url = page.getRequest().getUrl();
         if (url.endsWith("/following")) {
             userParser.parseUserInfo(page);
-        }else if (url.endsWith("/answers/by_votes")){
+        }else if (url.matches(ANSWER_PAGE_REGEX)){
             answerParser.parseAnswerInfo(page);
-        }else if (url.endsWith("/posts/posts_by_votes")){
+        }else if (url.matches(ARTICLE_PAGE_REGEX)){
             articleParser.parseArticleInfo(page);
         }else {
             page.setSkip(true);

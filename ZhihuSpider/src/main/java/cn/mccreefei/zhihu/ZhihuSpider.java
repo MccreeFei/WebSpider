@@ -1,11 +1,13 @@
 package cn.mccreefei.zhihu;
 
+import cn.mccreefei.zhihu.magic.SeleniumDownloader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.downloader.Downloader;
+import us.codecraft.webmagic.downloader.PhantomJSDownloader;
 import us.codecraft.webmagic.pipeline.Pipeline;
 import us.codecraft.webmagic.processor.PageProcessor;
 
@@ -16,7 +18,8 @@ import us.codecraft.webmagic.processor.PageProcessor;
 @Component
 public class ZhihuSpider {
     private PageProcessor pageProcessor;
-    private Downloader downloader;
+    private SeleniumDownloader seleniumDownloader;
+    private PhantomJSDownloader phantomJSDownloader;
     private Pipeline pipeline;
 
     @Autowired
@@ -25,8 +28,13 @@ public class ZhihuSpider {
     }
 
     @Autowired
-    public void setDownloader(Downloader downloader) {
-        this.downloader = downloader;
+    public void setSeleniumDownloader(SeleniumDownloader seleniumDownloader) {
+        this.seleniumDownloader = seleniumDownloader;
+    }
+
+    @Autowired
+    public void setPhantomJSDownloader(PhantomJSDownloader phantomJSDownloader) {
+        this.phantomJSDownloader = phantomJSDownloader;
     }
 
     @Autowired
@@ -34,14 +42,18 @@ public class ZhihuSpider {
         this.pipeline = pipeline;
     }
 
-    public void crawl(String baseUrl, int threadNum){
-        Spider.create(pageProcessor).addPipeline(pipeline).addUrl(baseUrl)//.setDownloader(downloader)
+    public void crawl(int threadNum, String... baseUrl){
+        Spider.create(pageProcessor).addPipeline(pipeline).addUrl(baseUrl)
+                //.setDownloader(phantomJSDownloader)
+                .setDownloader(seleniumDownloader)
                 .thread(threadNum).run();
     }
 
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath:/spring/spring-dao.xml");
         ZhihuSpider zhihuSpider = context.getBean(ZhihuSpider.class);
-        zhihuSpider.crawl("https://www.zhihu.com/people/zhou-ruo-yu-99-95/following", 10);
+        zhihuSpider.crawl(1, "https://www.zhihu.com/people/zhou-ruo-yu-99-95/following",
+                "https://www.zhihu.com/people/zhou-ruo-yu-99-95/answers/by_votes",
+                "https://www.zhihu.com/people/zhou-ruo-yu-99-95/posts/posts_by_votes");
     }
 }
