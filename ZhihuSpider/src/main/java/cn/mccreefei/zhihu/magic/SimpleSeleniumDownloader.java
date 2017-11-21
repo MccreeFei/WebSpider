@@ -1,11 +1,16 @@
 package cn.mccreefei.zhihu.magic;
 
+import cn.mccreefei.zhihu.constant.ZhihuConstant;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriverService;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.springframework.stereotype.Component;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Request;
@@ -14,40 +19,31 @@ import us.codecraft.webmagic.Task;
 import us.codecraft.webmagic.downloader.Downloader;
 import us.codecraft.webmagic.selector.Html;
 import us.codecraft.webmagic.selector.PlainText;
+import static cn.mccreefei.zhihu.constant.ZhihuConstant.*;
 
+import java.io.Closeable;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Map;
+import java.util.ResourceBundle;
 
 /**
+ * Modify on us.codecraft.webmagic.downloader.selenium.SeleniumDownloader
+ * Now support Chrome driver、Remote driver with Ghost driver and Ghost driver with phantomJS
  * @author MccreeFei
  * @create 2017-11-17 9:51
  */
 @Slf4j
-@Component
-public class SeleniumDownloader implements Downloader {
+public class SimpleSeleniumDownloader implements Downloader, Closeable {
+    private int driverType;
+    private DesiredCapabilities cap;
+    private URL ghostDriverUrl;
+    private final static ResourceBundle resource = ResourceBundle.getBundle("zhihu");
+    private SimpleWebDriverPool webDriverPool;
     private int sleepTime = 3000;
+    private int poolSize = 5;
 
-    private int poolSize = 1;
-
-
-    /**
-     * 新建
-     *
-     * @param chromeDriverPath chromeDriverPath
-     */
-    public SeleniumDownloader(String chromeDriverPath) {
-        System.getProperties().setProperty("webdriver.chrome.driver",
-                chromeDriverPath);
-    }
-
-    /**
-     * Constructor without any filed. Construct PhantomJS browser
-     *
-     * @author bob.li.0718@gmail.com
-     */
-    public SeleniumDownloader() {
-
-    }
 
     /**
      * set sleep time to wait until load success
@@ -55,7 +51,7 @@ public class SeleniumDownloader implements Downloader {
      * @param sleepTime sleepTime
      * @return this
      */
-    public SeleniumDownloader setSleepTime(int sleepTime) {
+    public SimpleSeleniumDownloader setSleepTime(int sleepTime) {
         this.sleepTime = sleepTime;
         return this;
     }
@@ -63,12 +59,12 @@ public class SeleniumDownloader implements Downloader {
     @Override
     public Page download(Request request, Task task) {
         long start = System.currentTimeMillis();
-        WebDriver webDriver;
-
-        webDriver = new ChromeDriver();
-        log.info("downloading page " + request.getUrl());
-        webDriver.get(request.getUrl());
+        checkInit();
+        WebDriver webDriver = null;
         try {
+            webDriver = webDriverPool.get();
+            log.info("downloading page " + request.getUrl());
+            webDriver.get(request.getUrl());
             Thread.sleep(sleepTime);
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -90,7 +86,6 @@ public class SeleniumDownloader implements Downloader {
 		/*
          * TODO You can add mouse event or other processes
 		 *
-		 * @author: bob.li.0718@gmail.com
 		 */
 
         WebElement webElement = webDriver.findElement(By.xpath("/html"));
@@ -100,14 +95,26 @@ public class SeleniumDownloader implements Downloader {
         page.setHtml(new Html(content, request.getUrl()));
         page.setUrl(new PlainText(request.getUrl()));
         page.setRequest(request);
-        webDriver.quit();
+        webDriverPool.returnToPool(webDriver);
         return page;
+    }
+
+    private void checkInit(){
+        if (webDriverPool == null){
+            synchronized (this){
+                webDriverPool = new SimpleWebDriverPool(poolSize);
+            }
+        }
+    }
+
+    @Override
+    public void setThread(int threadNum) {
+        this.poolSize = threadNum;
     }
 
 
     @Override
-    public void setThread(int thread) {
-
+    public void close() throws IOException {
+        webDriverPool.closeAll();
     }
-
 }
