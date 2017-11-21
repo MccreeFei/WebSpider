@@ -38,6 +38,14 @@ public class DaoTest {
                .setCollects(1000).setFollowers(1000).setFollowees(200).setCreateTime(new Date()).build();
 
        assertEquals(userDao.addZhihuUser(user), 1);
+       try {
+           Thread.sleep(1000);
+       } catch (InterruptedException e) {
+           e.printStackTrace();
+       }
+       user.setModifyTime(new Date());
+       user.setAgrees(3000);
+       assertEquals(userDao.addZhihuUser(user), 2);
    }
 
    @Test
@@ -47,6 +55,15 @@ public class DaoTest {
                .setAgrees(3000).setComments(2000).setCreateTime(new Date()).build();
 
        assertEquals(answerDao.addZhihuAnswer(answer), 1);
+       try {
+           Thread.sleep(1000);
+       } catch (InterruptedException e) {
+           e.printStackTrace();
+       }
+       answer.setModifyTime(new Date());
+       answer.setComments(1500);
+       answer.setAgrees(2000);
+       assertEquals(answerDao.addZhihuAnswer(answer), 2);
    }
 
    @Test
@@ -56,5 +73,14 @@ public class DaoTest {
                .setComments(1500).setCreateTime(new Date()).build();
 
        assertEquals(articleDao.addZhihuArticle(article), 1);
+       try {
+           Thread.sleep(1000);
+       } catch (InterruptedException e) {
+           e.printStackTrace();
+       }
+       article.setModifyTime(new Date());
+       article.setAgrees(1500);
+       article.setComments(1000);
+       assertEquals(articleDao.addZhihuArticle(article), 2);
    }
 }

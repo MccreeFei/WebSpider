@@ -21,6 +21,7 @@ public class ZhihuUser {
     private Integer followers;
     private Integer followees;
     private Date createTime;
+    private Date modifyTime;
 
     public static class UserBuilder {
         private String characterUrl;
@@ -33,6 +34,7 @@ public class ZhihuUser {
         private Integer followers;
         private Integer followees;
         private Date createTime;
+        private Date modifyTime;
 
         public UserBuilder setCharacterUrl(String characterUrl) {
             this.characterUrl = characterUrl;
@@ -84,6 +86,11 @@ public class ZhihuUser {
             return this;
         }
 
+        public UserBuilder setModifyTime(Date modifyTime){
+            this.modifyTime = modifyTime;
+            return this;
+        }
+
         public ZhihuUser build(){
             ZhihuUser user = new ZhihuUser();
             user.setCharacterUrl(characterUrl);
@@ -96,6 +103,7 @@ public class ZhihuUser {
             user.setFollowers(followers);
             user.setFollowees(followees);
             user.setCreateTime(createTime);
+            user.setModifyTime(modifyTime);
             return user;
         }
     }

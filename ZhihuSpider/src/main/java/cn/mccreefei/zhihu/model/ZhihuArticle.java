@@ -17,6 +17,7 @@ public class ZhihuArticle {
     private Integer agrees;
     private Integer comments;
     private Date createTime;
+    private Date modifyTime;
 
     public static class ArticleBuilder {
         private String characterUrl;
@@ -25,6 +26,7 @@ public class ZhihuArticle {
         private Integer agrees;
         private Integer comments;
         private Date createTime;
+        private Date modifyTime;
 
         public ArticleBuilder setCharacterUrl(String characterUrl) {
             this.characterUrl = characterUrl;
@@ -56,6 +58,11 @@ public class ZhihuArticle {
             return this;
         }
 
+        public ArticleBuilder setModifyTime(Date modifyTime){
+            this.modifyTime = modifyTime;
+            return this;
+        }
+
         public ZhihuArticle build(){
             ZhihuArticle article = new ZhihuArticle();
             article.setCharacterUrl(characterUrl);
@@ -64,6 +71,7 @@ public class ZhihuArticle {
             article.setAgrees(agrees);
             article.setComments(comments);
             article.setCreateTime(createTime);
+            article.setModifyTime(modifyTime);
             return article;
         }
     }

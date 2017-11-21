@@ -19,6 +19,7 @@ public class ZhihuAnswer {
     private Integer agrees;
     private Integer comments;
     private Date createTime;
+    private Date modifyTime;
 
     public static class AnswerBuilder{
         private String characterUrl;
@@ -29,6 +30,7 @@ public class ZhihuAnswer {
         private Integer agrees;
         private Integer comments;
         private Date createTime;
+        private Date modifyTime;
 
         public AnswerBuilder setCharacterUrl(String characterUrl) {
             this.characterUrl = characterUrl;
@@ -70,6 +72,11 @@ public class ZhihuAnswer {
             return this;
         }
 
+        public AnswerBuilder setModifyTime(Date modifyTime){
+            this.modifyTime = modifyTime;
+            return this;
+        }
+
         public ZhihuAnswer build(){
             ZhihuAnswer result = new ZhihuAnswer();
             result.setCharacterUrl(characterUrl);
@@ -80,6 +87,7 @@ public class ZhihuAnswer {
             result.setAgrees(agrees);
             result.setComments(comments);
             result.setCreateTime(createTime);
+            result.setModifyTime(modifyTime);
             return result;
         }
     }

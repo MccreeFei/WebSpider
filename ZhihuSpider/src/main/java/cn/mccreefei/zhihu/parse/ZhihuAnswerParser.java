@@ -88,7 +88,7 @@ public class ZhihuAnswerParser {
                     ZhihuAnswer answer = new ZhihuAnswer.AnswerBuilder().setCharacterUrl(characterUrl)
                             .setAgrees(agrees).setAnswerUrl("https://www.zhihu.com" + answerUrl)
                             .setQuestionTitle(questionTitle).setQuestionId(questionId).setAnswerId(answerId)
-                            .setComments(comments).setCreateTime(new Date()).build();
+                            .setComments(comments).setCreateTime(new Date()).setModifyTime(new Date()).build();
 
                     page.putField("answer", answer);
 

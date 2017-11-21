@@ -47,7 +47,7 @@ public class ZhihuUserParser {
 
         ZhihuUser user = new ZhihuUser.UserBuilder().setCharacterUrl(characterUrl).setSimpleDescription(simpleDesc)
                 .setHeadUrl(headUrl).setUserName(userName).setAgrees(agrees).setThanks(thanks).setCollects(collects)
-                .setFollowers(followers).setFollowees(followees).setCreateTime(new Date()).build();
+                .setFollowers(followers).setFollowees(followees).setCreateTime(new Date()).setModifyTime(new Date()).build();
 
         page.putField("user", user);
 

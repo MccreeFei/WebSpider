@@ -12,6 +12,7 @@ CREATE TABLE `zhihu_user` (
    `followers` int(11) DEFAULT NULL COMMENT '关注者数',
    `followees` int(11) DEFAULT NULL COMMENT '关注了个数',
    `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+   `modify_time` datetime DEFAULT NULL COMMENT '更新时间',
    PRIMARY KEY (`id`),
    UNIQUE KEY `character_url` (`character_url`)
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8
@@ -26,6 +27,7 @@ CREATE TABLE `zhihu_article` (
    `agrees` int(11) DEFAULT NULL COMMENT '赞同数',
    `comments` int(11) DEFAULT NULL COMMENT '评论数',
    `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+   `modify_time` datetime DEFAULT NULL COMMENT '更新时间',
    PRIMARY KEY (`id`),
    UNIQUE KEY `character_url` (`character_url`)
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8
@@ -41,6 +43,7 @@ CREATE TABLE `zhihu_answer` (
    `agrees` int(11) DEFAULT NULL COMMENT '赞同数',
    `comments` int(11) DEFAULT NULL COMMENT '评论数',
    `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+   `modify_time` datetime DEFAULT NULL COMMENT '更新时间',
    PRIMARY KEY (`id`),
    UNIQUE KEY `character_url` (`character_url`)
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8

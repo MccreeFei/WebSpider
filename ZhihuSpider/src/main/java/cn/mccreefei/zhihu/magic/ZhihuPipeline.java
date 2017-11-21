@@ -47,20 +47,26 @@ public class ZhihuPipeline implements Pipeline {
 
         if (user != null){
             int i = userDao.addZhihuUser((ZhihuUser) user);
-            if (i > 0){
+            if (i == 1){
                 log.info("add one user record success : {}", user);
+            }else if (i == 2){
+                log.info("update one user record success : {}", user);
             }
         }
         if (article != null){
             int i = articleDao.addZhihuArticle((ZhihuArticle) article);
-            if (i > 0){
+            if (i == 1){
                 log.info("add one article record success : {}", article);
+            }else if (i == 2){
+                log.info("update one article record success : {}", article);
             }
         }
         if (answer != null){
             int i = answerDao.addZhihuAnswer((ZhihuAnswer) answer);
-            if (i > 0){
+            if (i == 1){
                 log.info("add one answer record success : {}", answer);
+            }else if (i == 2){
+                log.info("update one answer record success : {}", answer);
             }
         }
     }

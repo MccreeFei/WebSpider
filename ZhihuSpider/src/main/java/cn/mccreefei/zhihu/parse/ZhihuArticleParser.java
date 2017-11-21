@@ -78,7 +78,7 @@ public class ZhihuArticleParser {
 
                     ZhihuArticle article = new ZhihuArticle.ArticleBuilder().setCharacterUrl(characterUrl)
                             .setArticleUrl(articleUrl).setArticleTitle(articleTitle).setAgrees(agrees)
-                            .setComments(comments).setCreateTime(new Date()).build();
+                            .setComments(comments).setCreateTime(new Date()).setModifyTime(new Date()).build();
 
                     page.putField("article", article);
 

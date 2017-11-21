@@ -1,6 +1,7 @@
 package cn.mccreefei.zhihu;
 
 import cn.mccreefei.zhihu.magic.SimpleSeleniumDownloader;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -11,15 +12,20 @@ import us.codecraft.webmagic.pipeline.Pipeline;
 import us.codecraft.webmagic.processor.PageProcessor;
 import us.codecraft.webmagic.scheduler.FileCacheQueueScheduler;
 
+import java.util.MissingResourceException;
+import java.util.ResourceBundle;
+
 /**
  * @author MccreeFei
  * @create 2017-11-15 14:06
  */
+@Slf4j
 @Component
 public class ZhihuSpider {
     private PageProcessor pageProcessor;
     private SimpleSeleniumDownloader simpleSeleniumDownloader;
     private Pipeline pipeline;
+    private static final ResourceBundle resource = ResourceBundle.getBundle("zhihu");
 
     @Autowired
     public void setPageProcessor(PageProcessor pageProcessor) {
@@ -38,10 +44,17 @@ public class ZhihuSpider {
     }
 
     public void crawl(int threadNum, String... baseUrl){
-        Spider.create(pageProcessor).addPipeline(pipeline).addUrl(baseUrl)
-                .setScheduler(new FileCacheQueueScheduler("E:\\webmagic"))
+        Spider spider = Spider.create(pageProcessor).addPipeline(pipeline).addUrl(baseUrl)
                 .setDownloader(simpleSeleniumDownloader)
-                .thread(threadNum).run();
+                .thread(threadNum);
+        try {
+            String fileCachePath = resource.getString("FILE_CACHE_PATH");
+            log.info("use FileCacheQueueScheduler and FILE_CACHE_PATH is : " + fileCachePath);
+            spider.setScheduler(new FileCacheQueueScheduler(fileCachePath));
+        }catch (MissingResourceException e){
+            log.info("no FILE_CACHE_PATH founds, default use QueueSchedule");
+        }
+        spider.run();
     }
 
     public static void main(String[] args) {
