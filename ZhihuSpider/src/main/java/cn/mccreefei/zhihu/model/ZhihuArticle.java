@@ -12,6 +12,7 @@ import java.util.Date;
 public class ZhihuArticle {
     private Integer id;
     private String characterUrl;
+    private Integer articleId;
     private String articleUrl;
     private String articleTitle;
     private Integer agrees;
@@ -21,6 +22,7 @@ public class ZhihuArticle {
 
     public static class ArticleBuilder {
         private String characterUrl;
+        private Integer articleId;
         private String articleUrl;
         private String articleTitle;
         private Integer agrees;
@@ -30,6 +32,11 @@ public class ZhihuArticle {
 
         public ArticleBuilder setCharacterUrl(String characterUrl) {
             this.characterUrl = characterUrl;
+            return this;
+        }
+
+        public ArticleBuilder setArticleId(Integer articleId) {
+            this.articleId = articleId;
             return this;
         }
 
@@ -66,6 +73,7 @@ public class ZhihuArticle {
         public ZhihuArticle build(){
             ZhihuArticle article = new ZhihuArticle();
             article.setCharacterUrl(characterUrl);
+            article.setArticleId(articleId);
             article.setArticleUrl(articleUrl);
             article.setArticleTitle(articleTitle);
             article.setAgrees(agrees);

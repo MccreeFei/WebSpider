@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import us.codecraft.webmagic.Page;
+import us.codecraft.webmagic.Request;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.processor.PageProcessor;
 
@@ -87,7 +88,7 @@ public class ZhihuPageProcessor implements PageProcessor {
                         int maxPage = Integer.parseInt(pageList.get(pageList.size() - 1));
                         for (int i = 2; i <= maxPage; i++) {
                             String pageUrl = sourceUrl + "?page=" + i;
-                            page.addTargetRequest(pageUrl);
+                            page.addTargetRequest(new Request(pageUrl).setPriority(20));
                         }
                     }
                 }
@@ -95,9 +96,9 @@ public class ZhihuPageProcessor implements PageProcessor {
                         "//div[@class='ContentItem-head']//a[@class='UserLink-link]").links().all();
                 if (urlList != null && urlList.size() > 0) {
                     for (String url : urlList) {
-                        page.addTargetRequest(url + "/following");
-                        page.addTargetRequest(url + "/answers/by_votes");
-                        page.addTargetRequest(url + "/posts/posts_by_votes");
+                        page.addTargetRequest(new Request(url + "/following").setPriority(100));
+                        page.addTargetRequest(new Request(url + "/answers/by_votes").setPriority(100));
+                        page.addTargetRequest(new Request(url + "/posts/posts_by_votes").setPriority(100));
                     }
                 }
             }

@@ -10,7 +10,9 @@ import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.downloader.PhantomJSDownloader;
 import us.codecraft.webmagic.pipeline.Pipeline;
 import us.codecraft.webmagic.processor.PageProcessor;
+import us.codecraft.webmagic.scheduler.BloomFilterDuplicateRemover;
 import us.codecraft.webmagic.scheduler.FileCacheQueueScheduler;
+import us.codecraft.webmagic.scheduler.PriorityScheduler;
 
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
@@ -47,20 +49,22 @@ public class ZhihuSpider {
         Spider spider = Spider.create(pageProcessor).addPipeline(pipeline).addUrl(baseUrl)
                 .setDownloader(simpleSeleniumDownloader)
                 .thread(threadNum);
-        try {
-            String fileCachePath = resource.getString("FILE_CACHE_PATH");
-            log.info("use FileCacheQueueScheduler and FILE_CACHE_PATH is : " + fileCachePath);
-            spider.setScheduler(new FileCacheQueueScheduler(fileCachePath));
-        }catch (MissingResourceException e){
-            log.info("no FILE_CACHE_PATH founds, default use QueueSchedule");
-        }
-        spider.run();
+//        try {
+//            String fileCachePath = resource.getString("FILE_CACHE_PATH");
+//            log.info("use FileCacheQueueScheduler and FILE_CACHE_PATH is : " + fileCachePath);
+//            spider.setScheduler(new FileCacheQueueScheduler(fileCachePath));
+//        }catch (MissingResourceException e){
+//            log.info("no FILE_CACHE_PATH founds, default use QueueSchedule");
+//        }
+//        spider.run();
+        spider.setScheduler(new PriorityScheduler()
+                .setDuplicateRemover(new BloomFilterDuplicateRemover(10000000))).run();
     }
 
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath:/spring/spring-dao.xml");
         ZhihuSpider zhihuSpider = context.getBean(ZhihuSpider.class);
-        zhihuSpider.crawl(3, "https://www.zhihu.com/people/zhou-ruo-yu-99-95/following",
+        zhihuSpider.crawl(5, "https://www.zhihu.com/people/zhou-ruo-yu-99-95/following",
                 "https://www.zhihu.com/people/zhou-ruo-yu-99-95/answers/by_votes",
                 "https://www.zhihu.com/people/zhou-ruo-yu-99-95/posts/posts_by_votes");
     }

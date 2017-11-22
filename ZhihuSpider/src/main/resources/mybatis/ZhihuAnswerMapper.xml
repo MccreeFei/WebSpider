@@ -65,17 +65,8 @@
 
         ON DUPLICATE KEY UPDATE
         <trim suffixOverrides=",">
-            <if test="answerUrl != null">
-                answer_url = #{answerUrl},
-            </if>
-            <if test="questionId != null">
-                question_id = #{questionId},
-            </if>
             <if test="questionTitle != null">
                 question_title = #{questionTitle},
-            </if>
-            <if test="answerId != null">
-                answer_id = #{answerId},
             </if>
             <if test="agrees != null">
                 agrees = #{agrees},

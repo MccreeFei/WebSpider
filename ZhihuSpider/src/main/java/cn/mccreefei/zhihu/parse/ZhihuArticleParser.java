@@ -5,6 +5,7 @@ import cn.mccreefei.zhihu.model.ZhihuArticle;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import us.codecraft.webmagic.Page;
+import us.codecraft.webmagic.Request;
 import us.codecraft.webmagic.selector.Html;
 
 import java.util.Date;
@@ -50,7 +51,7 @@ public class ZhihuArticleParser {
                             try {
                                 int maxPage = Integer.parseInt(pageList.get(pageList.size() - 1));
                                 for (int i = 2; i <= maxPage; i++) {
-                                    page.addTargetRequest(url + "?page=" + i);
+                                    page.addTargetRequest(new Request(url + "?page=" + i).setPriority(50));
                                 }
                             }catch (Exception e){
                                 log.warn("添加分页url失败！", e);
@@ -69,7 +70,8 @@ public class ZhihuArticleParser {
                         break;
                     }
 
-                    String articleUrl = itemHtml.xpath("//h2[@class='ContentItem-title']").links().get();
+                    String articleUrl = formatArticleUrl(itemHtml.xpath("//h2[@class='ContentItem-title']").links().get());
+                    Integer articleId = getArticleId(articleUrl);
                     String articleTitle = itemHtml.xpath("//h2[@class='ContentItem-title']//a/text()").get();
 
                     String commentsText = itemHtml.xpath("//div[@class='ContentItem-actions']" +
@@ -77,7 +79,7 @@ public class ZhihuArticleParser {
                     Integer comments = getComments(commentsText);
 
                     ZhihuArticle article = new ZhihuArticle.ArticleBuilder().setCharacterUrl(characterUrl)
-                            .setArticleUrl(articleUrl).setArticleTitle(articleTitle).setAgrees(agrees)
+                            .setArticleUrl(articleUrl).setArticleTitle(articleTitle).setAgrees(agrees).setArticleId(articleId)
                             .setComments(comments).setCreateTime(new Date()).setModifyTime(new Date()).build();
 
                     page.putField("article", article);
@@ -103,6 +105,25 @@ public class ZhihuArticleParser {
             result = Integer.valueOf(commentsText.substring(1, index));
         }catch (Exception e){
             log.warn("parse article comments failed!", e);
+        }
+        return result;
+    }
+
+    private String formatArticleUrl(String url){
+        int index = url.indexOf("//");
+        if (index != -1){
+            return url.replace("//", "https://");
+        }
+        return url;
+    }
+
+    private Integer getArticleId(String articleUrl){
+        int index = articleUrl.indexOf("/p/");
+        Integer result = null;
+        try {
+            result = Integer.valueOf(articleUrl.substring(index + 3));
+        }catch (Exception e){
+            log.warn("parse article id failed! url is " + articleUrl, e);
         }
         return result;
     }

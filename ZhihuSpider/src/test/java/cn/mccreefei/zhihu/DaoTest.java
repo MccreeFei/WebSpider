@@ -64,11 +64,14 @@ public class DaoTest {
        answer.setComments(1500);
        answer.setAgrees(2000);
        assertEquals(answerDao.addZhihuAnswer(answer), 2);
+
+       answer.setQuestionId(1500);
+       assertEquals(answerDao.addZhihuAnswer(answer), 1);
    }
 
    @Test
     public void testAddArticle(){
-       ZhihuArticle article = new ZhihuArticle.ArticleBuilder().setCharacterUrl("MccreeFei")
+       ZhihuArticle article = new ZhihuArticle.ArticleBuilder().setCharacterUrl("MccreeFei").setArticleId(1000)
                .setArticleTitle("how to be rich?").setArticleUrl("www.google.com").setAgrees(2000)
                .setComments(1500).setCreateTime(new Date()).build();
 
@@ -82,5 +85,8 @@ public class DaoTest {
        article.setAgrees(1500);
        article.setComments(1000);
        assertEquals(articleDao.addZhihuArticle(article), 2);
+
+       article.setArticleId(1500);
+       assertEquals(articleDao.addZhihuArticle(article), 1);
    }
 }

@@ -2,10 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.mccreefei.zhihu.dao.ZhihuArticleDao">
     <insert id="addZhihuArticle" parameterType="cn.mccreefei.zhihu.model.ZhihuArticle">
-        insert ignore into zhihu_article
+        insert into zhihu_article
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="characterUrl != null">
                 character_url,
+            </if>
+            <if test="articleId != null">
+                article_id,
             </if>
             <if test="articleTitle != null">
                 article_title,
@@ -22,11 +25,17 @@
             <if test="articleUrl != null">
                 article_url,
             </if>
+            <if test="modifyTime != null">
+                modify_time,
+            </if>
         </trim>
 
         <trim prefix="values(" suffix=")" suffixOverrides=",">
             <if test="characterUrl != null">
                 #{characterUrl},
+            </if>
+            <if test="articleId != null">
+                #{articleId},
             </if>
             <if test="articleTitle != null">
                 #{articleTitle},
@@ -42,6 +51,25 @@
             </if>
             <if test="articleUrl != null">
                 #{articleUrl},
+            </if>
+            <if test="modifyTime != null">
+                #{modifyTime},
+            </if>
+        </trim>
+
+        ON DUPLICATE KEY UPDATE
+        <trim suffixOverrides=",">
+            <if test="articleTitle != null">
+                article_title = #{articleTitle},
+            </if>
+            <if test="agrees != null">
+                agrees = #{agrees},
+            </if>
+            <if test="comments != null">
+                comments = #{comments},
+            </if>
+            <if test="modifyTime != null">
+                modify_time = #{modifyTime},
             </if>
         </trim>
     </insert>

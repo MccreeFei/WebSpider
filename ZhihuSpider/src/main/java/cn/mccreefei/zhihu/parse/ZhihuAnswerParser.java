@@ -5,6 +5,7 @@ import cn.mccreefei.zhihu.model.ZhihuAnswer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import us.codecraft.webmagic.Page;
+import us.codecraft.webmagic.Request;
 import us.codecraft.webmagic.selector.Html;
 
 import java.util.Date;
@@ -51,7 +52,7 @@ public class ZhihuAnswerParser {
                             try {
                                 int maxPage = Integer.parseInt(pageList.get(pageList.size() - 1));
                                 for (int j = 2; j <= maxPage; j++) {
-                                    page.addTargetRequest(url + "?page=" + j);
+                                    page.addTargetRequest(new Request(url + "?page=" + j).setPriority(50));
                                 }
                             }catch (Exception e){
                                 log.warn("添加分页url失败！", e);

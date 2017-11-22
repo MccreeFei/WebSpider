@@ -15,35 +15,36 @@ CREATE TABLE `zhihu_user` (
    `modify_time` datetime DEFAULT NULL COMMENT '更新时间',
    PRIMARY KEY (`id`),
    UNIQUE KEY `character_url` (`character_url`)
- ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 #创建知乎文章表#
 CREATE TABLE `zhihu_article` (
-   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
-   `character_url` varchar(50) DEFAULT NULL COMMENT '特征url',
-   `article_url` varchar(200) DEFAULT NULL COMMENT '文章url',
-   `article_title` varchar(200) DEFAULT NULL COMMENT '文章标题',
-   `agrees` int(11) DEFAULT NULL COMMENT '赞同数',
-   `comments` int(11) DEFAULT NULL COMMENT '评论数',
-   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
-   `modify_time` datetime DEFAULT NULL COMMENT '更新时间',
+   `id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+   `character_url` VARCHAR(50) DEFAULT NULL COMMENT '特征url',
+   `article_id` INT(11) DEFAULT NULL COMMENT '文章id',
+   `article_url` VARCHAR(200) DEFAULT NULL COMMENT '文章url',
+   `article_title` VARCHAR(200) DEFAULT NULL COMMENT '文章标题',
+   `agrees` INT(11) DEFAULT NULL COMMENT '赞同数',
+   `comments` INT(11) DEFAULT NULL COMMENT '评论数',
+   `create_time` DATETIME DEFAULT NULL COMMENT '创建时间',
+   `modify_time` DATETIME DEFAULT NULL COMMENT '更新时间',
    PRIMARY KEY (`id`),
-   UNIQUE KEY `character_url` (`character_url`)
- ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+   UNIQUE KEY `article_id` (`article_id`)
+ ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 #创建知乎回答表#
 CREATE TABLE `zhihu_answer` (
-   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
-   `character_url` varchar(50) DEFAULT NULL COMMENT '特征url',
-   `answer_url` varchar(200) DEFAULT NULL COMMENT '回答url',
-   `question_id` int(11) DEFAULT NULL COMMENT '问题id',
-   `question_title` varchar(200) DEFAULT NULL COMMENT '问题标题',
-   `answer_id` int(11) DEFAULT NULL COMMENT '回答id',
-   `agrees` int(11) DEFAULT NULL COMMENT '赞同数',
-   `comments` int(11) DEFAULT NULL COMMENT '评论数',
-   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
-   `modify_time` datetime DEFAULT NULL COMMENT '更新时间',
+   `id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+   `character_url` VARCHAR(50) DEFAULT NULL COMMENT '特征url',
+   `answer_url` VARCHAR(200) DEFAULT NULL COMMENT '回答url',
+   `question_id` INT(11) DEFAULT NULL COMMENT '问题id',
+   `question_title` VARCHAR(200) DEFAULT NULL COMMENT '问题标题',
+   `answer_id` INT(11) DEFAULT NULL COMMENT '回答id',
+   `agrees` INT(11) DEFAULT NULL COMMENT '赞同数',
+   `comments` INT(11) DEFAULT NULL COMMENT '评论数',
+   `create_time` DATETIME DEFAULT NULL COMMENT '创建时间',
+   `modify_time` DATETIME DEFAULT NULL COMMENT '更新时间',
    PRIMARY KEY (`id`),
-   UNIQUE KEY `character_url` (`character_url`)
- ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+   UNIQUE KEY (`question_id`, `answer_id`)
+ ) ENGINE=INNODB DEFAULT CHARSET=utf8;
