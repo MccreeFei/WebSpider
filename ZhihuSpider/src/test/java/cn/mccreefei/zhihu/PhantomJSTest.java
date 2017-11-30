@@ -21,11 +21,11 @@ public class PhantomJSTest {
     private static String CRAWL_JS_FILE_PATH;
 
     @Before
-    public void initContext(){
+    public void initContext() {
         try {
             PHANTOMJS_PATH = resource.getString("PHANTOMJS_PATH");
             CRAWL_JS_FILE_PATH = resource.getString("CRAWL_JS_FILE_PATH");
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
@@ -39,9 +39,9 @@ public class PhantomJSTest {
             long time1 = System.currentTimeMillis();
             Process exec = runtime.exec(PHANTOMJS_PATH + " " + CRAWL_JS_FILE_PATH + " " + url);
             BufferedReader br = new BufferedReader(new InputStreamReader(exec.getInputStream()));
-            StringBuilder sb  = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             String line = null;
-            while ((line = br.readLine()) != null){
+            while ((line = br.readLine()) != null) {
                 sb.append(line + "\n");
             }
             page = sb.toString();

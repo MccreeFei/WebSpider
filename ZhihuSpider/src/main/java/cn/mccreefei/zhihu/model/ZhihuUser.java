@@ -86,12 +86,12 @@ public class ZhihuUser {
             return this;
         }
 
-        public UserBuilder setModifyTime(Date modifyTime){
+        public UserBuilder setModifyTime(Date modifyTime) {
             this.modifyTime = modifyTime;
             return this;
         }
 
-        public ZhihuUser build(){
+        public ZhihuUser build() {
             ZhihuUser user = new ZhihuUser();
             user.setCharacterUrl(characterUrl);
             user.setHeadUrl(headUrl);

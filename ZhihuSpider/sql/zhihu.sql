@@ -48,3 +48,17 @@ CREATE TABLE `zhihu_answer` (
    PRIMARY KEY (`id`),
    UNIQUE KEY (`question_id`, `answer_id`)
  ) ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+
+ #创建知乎文本详情表#
+CREATE TABLE `zhihu_text_detail` (
+   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+   `character_url` varchar(50) DEFAULT NULL COMMENT '特征url',
+   `url` varchar(100) DEFAULT NULL COMMENT '文本url',
+   `text_type` tinyint(4) DEFAULT NULL COMMENT '文本类型，1:回答，2:文章',
+   `content` text COMMENT '文本内容',
+   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+   `modify_time` datetime DEFAULT NULL COMMENT '更新时间',
+   PRIMARY KEY (`id`),
+   UNIQUE KEY `url` (`url`)
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8

@@ -5,10 +5,11 @@ package cn.mccreefei.zhihu.exception;
  * @create 2017-11-15 17:05
  */
 public class ParseException extends RuntimeException {
-    public ParseException(){
+    public ParseException() {
         super();
     }
-    public ParseException(String message){
+
+    public ParseException(String message) {
         super(message);
     }
 }

@@ -45,7 +45,7 @@ public class ZhihuSpider {
         this.pipeline = pipeline;
     }
 
-    public void crawl(int threadNum, String... baseUrl){
+    public void crawl(int threadNum, String... baseUrl) {
         Spider spider = Spider.create(pageProcessor).addPipeline(pipeline).addUrl(baseUrl)
                 .setDownloader(simpleSeleniumDownloader)
                 .thread(threadNum);

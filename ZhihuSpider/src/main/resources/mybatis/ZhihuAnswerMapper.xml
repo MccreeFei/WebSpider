@@ -80,4 +80,8 @@
         </trim>
     </insert>
 
+    <select id="getZhihuAnswerUrlList" resultType="java.lang.String">
+        select answer_url from zhihu_answer
+    </select>
+
 </mapper>

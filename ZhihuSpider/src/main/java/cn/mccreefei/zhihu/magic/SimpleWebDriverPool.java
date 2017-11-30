@@ -31,20 +31,20 @@ public class SimpleWebDriverPool {
     private String driver;
     private final static ResourceBundle resource = ResourceBundle.getBundle("zhihu");
 
-    public SimpleWebDriverPool(){
+    public SimpleWebDriverPool() {
         this(DEFAULT_CAPACITY);
     }
 
-    public SimpleWebDriverPool(int capacity){
+    public SimpleWebDriverPool(int capacity) {
         this.capacity = capacity;
         innerQueue = new LinkedBlockingQueue<WebDriver>(capacity);
     }
 
-    private WebDriver configureWebDriver(){
+    private WebDriver configureWebDriver() {
         WebDriver webDriver = null;
         try {
             driver = resource.getString("DRIVER");
-        }catch (MissingResourceException e){
+        } catch (MissingResourceException e) {
             log.debug("no driver property find use default driver phantomjs");
             driver = DRIVER_PHANTOMJS;
         }
@@ -58,18 +58,18 @@ public class SimpleWebDriverPool {
         caps.setCapability(PhantomJSDriverService.PHANTOMJS_CLI_ARGS,
                 "--load-images=no");
 
-        if (isUrl(driver)){
+        if (isUrl(driver)) {
             try {
                 URL remoteAddress = new URL(driver);
                 webDriver = new RemoteWebDriver(remoteAddress, caps);
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
-        }else if (DRIVER_CHROME.equalsIgnoreCase(driver)){
+        } else if (DRIVER_CHROME.equalsIgnoreCase(driver)) {
             String chromePath = resource.getString("CHROME_DRIVER_PATH");
             System.setProperty("webdriver.chrome.driver", chromePath);
             webDriver = new ChromeDriver(caps);
-        }else {
+        } else {
             String phantomjsPath = resource.getString("PHANTOMJS_PATH");
             caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, phantomjsPath);
             webDriver = new PhantomJSDriver(caps);
@@ -77,23 +77,23 @@ public class SimpleWebDriverPool {
         return webDriver;
     }
 
-    private boolean isUrl(String urlString){
+    private boolean isUrl(String urlString) {
         try {
             URL url = new URL(urlString);
             return true;
-        }catch (MalformedURLException e){
+        } catch (MalformedURLException e) {
             return false;
         }
     }
 
     public WebDriver get() throws InterruptedException {
         WebDriver driver = null;
-        if ((driver = innerQueue.poll()) != null){
+        if ((driver = innerQueue.poll()) != null) {
             return driver;
         }
-        if (refCount.get() < capacity){
-            synchronized (innerQueue){
-                if (refCount.get() < capacity){
+        if (refCount.get() < capacity) {
+            synchronized (innerQueue) {
+                if (refCount.get() < capacity) {
                     WebDriver webDriver = configureWebDriver();
                     log.info("add webDriver {} into pool!", webDriver);
                     refCount.incrementAndGet();
@@ -105,14 +105,14 @@ public class SimpleWebDriverPool {
         return innerQueue.take();
     }
 
-    public void returnToPool(WebDriver webDriver){
+    public void returnToPool(WebDriver webDriver) {
         innerQueue.add(webDriver);
     }
 
 
-    public void closeAll(){
-        synchronized (innerQueue){
-            for (WebDriver webDriver : innerQueue){
+    public void closeAll() {
+        synchronized (innerQueue) {
+            for (WebDriver webDriver : innerQueue) {
                 log.info("Quit WebDriver: " + webDriver);
                 webDriver.quit();
                 webDriver = null;

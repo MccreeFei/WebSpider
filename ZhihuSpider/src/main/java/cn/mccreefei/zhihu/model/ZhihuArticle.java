@@ -65,12 +65,12 @@ public class ZhihuArticle {
             return this;
         }
 
-        public ArticleBuilder setModifyTime(Date modifyTime){
+        public ArticleBuilder setModifyTime(Date modifyTime) {
             this.modifyTime = modifyTime;
             return this;
         }
 
-        public ZhihuArticle build(){
+        public ZhihuArticle build() {
             ZhihuArticle article = new ZhihuArticle();
             article.setCharacterUrl(characterUrl);
             article.setArticleId(articleId);

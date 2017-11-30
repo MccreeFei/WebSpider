@@ -21,7 +21,7 @@ public class ZhihuAnswer {
     private Date createTime;
     private Date modifyTime;
 
-    public static class AnswerBuilder{
+    public static class AnswerBuilder {
         private String characterUrl;
         private String answerUrl;
         private Integer questionId;
@@ -72,12 +72,12 @@ public class ZhihuAnswer {
             return this;
         }
 
-        public AnswerBuilder setModifyTime(Date modifyTime){
+        public AnswerBuilder setModifyTime(Date modifyTime) {
             this.modifyTime = modifyTime;
             return this;
         }
 
-        public ZhihuAnswer build(){
+        public ZhihuAnswer build() {
             ZhihuAnswer result = new ZhihuAnswer();
             result.setCharacterUrl(characterUrl);
             result.setAnswerUrl(answerUrl);

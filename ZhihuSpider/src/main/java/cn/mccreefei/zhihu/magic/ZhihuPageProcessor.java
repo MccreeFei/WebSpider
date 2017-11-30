@@ -30,13 +30,13 @@ public class ZhihuPageProcessor implements PageProcessor {
     private static final String ARTICLE_PAGE_REGEX = "(.*/posts/posts_by_votes)|(.*/posts/posts_by_votes\\?page=\\d)";
     private Site site;
 
-    public ZhihuPageProcessor(){
+    public ZhihuPageProcessor() {
         int retryTimes = 0;
         int crawlSleepTime = 0;
         try {
             retryTimes = Integer.parseInt(resource.getString("RETRY_TIMES"));
             crawlSleepTime = Integer.parseInt(resource.getString("CRAWL_SLEEP_TIME"));
-        }catch (Exception e){
+        } catch (Exception e) {
             log.warn("get RETRY_TIMES or CRAWL_SLEEP_TIME from resource failed! use default value 3 for RETRY_TIME and 2000 for CRAWL_SLEEP_TIME");
             retryTimes = 3;
             crawlSleepTime = 2000;
@@ -45,6 +45,7 @@ public class ZhihuPageProcessor implements PageProcessor {
                 setUserAgent("Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36");
 
     }
+
     @Autowired
     public void setUserParser(ZhihuUserParser userParser) {
         this.userParser = userParser;
@@ -66,16 +67,16 @@ public class ZhihuPageProcessor implements PageProcessor {
         String url = page.getRequest().getUrl();
         if (url.endsWith("/following")) {
             userParser.parseUserInfo(page);
-        }else if (url.matches(ANSWER_PAGE_REGEX)){
+        } else if (url.matches(ANSWER_PAGE_REGEX)) {
             answerParser.parseAnswerInfo(page);
-        }else if (url.matches(ARTICLE_PAGE_REGEX)){
+        } else if (url.matches(ARTICLE_PAGE_REGEX)) {
             articleParser.parseArticleInfo(page);
-        }else {
+        } else {
             page.setSkip(true);
         }
     }
 
-    protected void addTargetUrls(Page page){
+    protected void addTargetUrls(Page page) {
         String sourceUrl = page.getRequest().getUrl();
         try {
             if (sourceUrl.matches(FOLLOW_PAGE_REGEX)) {
@@ -102,7 +103,7 @@ public class ZhihuPageProcessor implements PageProcessor {
                     }
                 }
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             log.error("add target urls failed!", e);
         }
     }

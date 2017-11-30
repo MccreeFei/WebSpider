@@ -1,17 +1,11 @@
 package cn.mccreefei.zhihu.magic;
 
-import cn.mccreefei.zhihu.constant.ZhihuConstant;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.phantomjs.PhantomJSDriver;
-import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.springframework.stereotype.Component;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Request;
 import us.codecraft.webmagic.Site;
@@ -19,11 +13,9 @@ import us.codecraft.webmagic.Task;
 import us.codecraft.webmagic.downloader.Downloader;
 import us.codecraft.webmagic.selector.Html;
 import us.codecraft.webmagic.selector.PlainText;
-import static cn.mccreefei.zhihu.constant.ZhihuConstant.*;
 
 import java.io.Closeable;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Map;
 import java.util.ResourceBundle;
@@ -31,6 +23,7 @@ import java.util.ResourceBundle;
 /**
  * Modify on us.codecraft.webmagic.downloader.selenium.SeleniumDownloader
  * Now support Chrome driver、Remote driver with Ghost driver and Ghost driver with phantomJS
+ *
  * @author MccreeFei
  * @create 2017-11-17 9:51
  */
@@ -99,9 +92,9 @@ public class SimpleSeleniumDownloader implements Downloader, Closeable {
         return page;
     }
 
-    private void checkInit(){
-        if (webDriverPool == null){
-            synchronized (this){
+    private void checkInit() {
+        if (webDriverPool == null) {
+            synchronized (this) {
                 webDriverPool = new SimpleWebDriverPool(poolSize);
             }
         }
