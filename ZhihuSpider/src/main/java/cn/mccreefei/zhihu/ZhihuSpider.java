@@ -1,6 +1,7 @@
 package cn.mccreefei.zhihu;
 
 import cn.mccreefei.zhihu.magic.SimpleSeleniumDownloader;
+import cn.mccreefei.zhihu.magic.ZhihuPageProcessor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -24,14 +25,14 @@ import java.util.ResourceBundle;
 @Slf4j
 @Component
 public class ZhihuSpider {
-    private PageProcessor pageProcessor;
+    private ZhihuPageProcessor zhihuPageProcessor;
     private SimpleSeleniumDownloader simpleSeleniumDownloader;
     private Pipeline pipeline;
     private static final ResourceBundle resource = ResourceBundle.getBundle("zhihu");
 
     @Autowired
-    public void setPageProcessor(PageProcessor pageProcessor) {
-        this.pageProcessor = pageProcessor;
+    public void setZhihuPageProcessor(ZhihuPageProcessor zhihuPageProcessor) {
+        this.zhihuPageProcessor = zhihuPageProcessor;
     }
 
     @Autowired
@@ -46,7 +47,7 @@ public class ZhihuSpider {
     }
 
     public void crawl(int threadNum, String... baseUrl) {
-        Spider spider = Spider.create(pageProcessor).addPipeline(pipeline).addUrl(baseUrl)
+        Spider spider = Spider.create(zhihuPageProcessor).addPipeline(pipeline).addUrl(baseUrl)
                 .setDownloader(simpleSeleniumDownloader)
                 .thread(threadNum);
 //        try {

@@ -50,15 +50,27 @@ CREATE TABLE `zhihu_answer` (
  ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 
- #创建知乎文本详情表#
-CREATE TABLE `zhihu_text_detail` (
+
+#创建文章文本表#
+CREATE TABLE `zhihu_article_text` (
    `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
-   `character_url` varchar(50) DEFAULT NULL COMMENT '特征url',
-   `url` varchar(100) DEFAULT NULL COMMENT '文本url',
-   `text_type` tinyint(4) DEFAULT NULL COMMENT '文本类型，1:回答，2:文章',
+   `article_id` int(11) DEFAULT NULL COMMENT '文章id',
    `content` text COMMENT '文本内容',
    `create_time` datetime DEFAULT NULL COMMENT '创建时间',
    `modify_time` datetime DEFAULT NULL COMMENT '更新时间',
    PRIMARY KEY (`id`),
-   UNIQUE KEY `url` (`url`)
+   UNIQUE KEY `article_id` (`article_id`)
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+
+#创建回答文本表#
+CREATE TABLE `zhihu_answer_text` (
+   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+   `question_id` int(11) DEFAULT NULL COMMENT '问题id',
+   `answer_id` int(11) DEFAULT NULL COMMENT '回答id',
+   `content` text COMMENT '文本内容',
+   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+   `modify_time` datetime DEFAULT NULL COMMENT '更新时间',
+   PRIMARY KEY (`id`),
+   UNIQUE KEY `question_id` (`question_id`,`answer_id`)
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8

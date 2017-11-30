@@ -74,4 +74,8 @@
         </trim>
     </insert>
 
+    <select id="getZhihuArticleUrlList" resultType="java.lang.String">
+        select article_url from zhihu_article
+    </select>
+
 </mapper>

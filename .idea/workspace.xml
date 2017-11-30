@@ -6,37 +6,30 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87553ca9-d3db-427a-aa38-34087253aa6f" name="Default" comment="数据库结构修改，增加待爬取url的优先度">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuTextDetailDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/model/ZhihuTextDetail.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/resources/mybatis/ZhihuTextDetailMapper.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/constant/ZhihuConstant.java" afterPath="" />
+    <list default="true" id="87553ca9-d3db-427a-aa38-34087253aa6f" name="Default" comment="添加文本详情表以及相关dao，format 代码">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuAnswerTextDao.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuArticleTextDao.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/ZhihuTextPageProcessor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/model/ZhihuAnswerText.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/model/ZhihuArticleText.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuTextParser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/resources/mybatis/ZhihuAnswerTextMapper.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/resources/mybatis/ZhihuArticleTextMapper.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuTextDetailDao.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/model/ZhihuTextDetail.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ZhihuSpider/src/main/resources/mybatis/ZhihuTextDetailMapper.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/target/classes/cn/mccreefei/zhihu/dao/ZhihuAnswerDao.class" afterPath="$PROJECT_DIR$/ZhihuSpider/target/classes/cn/mccreefei/zhihu/dao/ZhihuAnswerDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/target/classes/cn/mccreefei/zhihu/dao/ZhihuArticleDao.class" afterPath="$PROJECT_DIR$/ZhihuSpider/target/classes/cn/mccreefei/zhihu/dao/ZhihuArticleDao.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/target/test-classes/cn/mccreefei/zhihu/DaoTest.class" afterPath="$PROJECT_DIR$/ZhihuSpider/target/test-classes/cn/mccreefei/zhihu/DaoTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/pom.xml" afterPath="$PROJECT_DIR$/ZhihuSpider/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/sql/zhihu.sql" afterPath="$PROJECT_DIR$/ZhihuSpider/sql/zhihu.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/ZhihuSpider.java" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/ZhihuSpider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuAnswerDao.java" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuAnswerDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuArticleDao.java" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuArticleDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/exception/ParseException.java" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/exception/ParseException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/SimpleSeleniumDownloader.java" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/SimpleSeleniumDownloader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/SimpleWebDriverPool.java" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/SimpleWebDriverPool.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/ZhihuPageProcessor.java" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/ZhihuPageProcessor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/ZhihuPipeline.java" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/ZhihuPipeline.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/model/ZhihuAnswer.java" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/model/ZhihuAnswer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/model/ZhihuArticle.java" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/model/ZhihuArticle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/model/ZhihuUser.java" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/model/ZhihuUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/src/main/resources/db.properties" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/resources/db.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/src/main/resources/mybatis/ZhihuAnswerMapper.xml" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/resources/mybatis/ZhihuAnswerMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/src/main/resources/mybatis/ZhihuArticleMapper.xml" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/resources/mybatis/ZhihuArticleMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/src/main/resources/mybatis/ZhihuUserMapper.xml" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/resources/mybatis/ZhihuUserMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/src/main/resources/zhihu.properties" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/resources/zhihu.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/src/test/java/cn/mccreefei/zhihu/DaoTest.java" afterPath="$PROJECT_DIR$/ZhihuSpider/src/test/java/cn/mccreefei/zhihu/DaoTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/src/test/java/cn/mccreefei/zhihu/PhantomJSTest.java" afterPath="$PROJECT_DIR$/ZhihuSpider/src/test/java/cn/mccreefei/zhihu/PhantomJSTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/target/classes/mybatis/ZhihuAnswerMapper.xml" afterPath="$PROJECT_DIR$/ZhihuSpider/target/classes/mybatis/ZhihuAnswerMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/target/classes/mybatis/ZhihuArticleMapper.xml" afterPath="$PROJECT_DIR$/ZhihuSpider/target/classes/mybatis/ZhihuArticleMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/target/classes/mybatis/ZhihuUserMapper.xml" afterPath="$PROJECT_DIR$/ZhihuSpider/target/classes/mybatis/ZhihuUserMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/target/classes/zhihu.properties" afterPath="$PROJECT_DIR$/ZhihuSpider/target/classes/zhihu.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/ZhihuSpider/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/ZhihuSpider/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
     </list>
     <ignored path="WebSpider.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,74 +52,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ZhihuPageProcessor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/ZhihuPageProcessor.java">
+      <file leaf-file-name="ZhihuSpider.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/ZhihuSpider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="101" column="104" selection-start-line="101" selection-start-column="104" selection-end-line="101" selection-end-column="104" />
+            <state relative-caret-position="550">
+              <caret line="49" column="56" selection-start-line="49" selection-start-column="56" selection-end-line="49" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleWebDriverPool.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/SimpleWebDriverPool.java">
+      <file leaf-file-name="ZhihuTextParser.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuTextParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="67" column="50" selection-start-line="67" selection-start-column="50" selection-end-line="67" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimpleSeleniumDownloader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/SimpleSeleniumDownloader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1403">
-              <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParseException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/exception/ParseException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding>
-                <element signature="e#179#180#0" expanded="true" />
-                <element signature="e#247#248#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ZhihuUserDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuUserDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ZhihuTextDetailDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuTextDetailDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ZhihuArticleDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuArticleDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
+            <state relative-caret-position="119">
+              <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -134,26 +74,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ZhihuAnswerDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuAnswerDao.java">
+      <file leaf-file-name="DaoTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/test/java/cn/mccreefei/zhihu/DaoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="45" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="317">
+              <caret line="98" column="74" selection-start-line="98" selection-start-column="74" selection-end-line="98" selection-end-column="74" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ZhihuTextDetail.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/model/ZhihuTextDetail.java">
+      <file leaf-file-name="zhihu.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ZhihuSpider/sql/zhihu.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="696">
-              <caret line="66" column="30" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="458">
+              <caret line="75" column="17" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -161,11 +97,72 @@
       <file leaf-file-name="ZhihuPipeline.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/ZhihuPipeline.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+            <state relative-caret-position="-760">
+              <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
               <folding>
-                <element signature="e#879#880#0" expanded="true" />
-                <element signature="e#917#918#0" expanded="true" />
+                <element signature="e#791#792#0" expanded="true" />
+                <element signature="e#843#844#0" expanded="true" />
+                <element signature="e#928#929#0" expanded="true" />
+                <element signature="e#978#979#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ZhihuAnswerTextDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuAnswerTextDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ZhihuArticleTextDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuArticleTextDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" column="69" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ZhihuAnswerTextMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/resources/mybatis/ZhihuAnswerTextMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="46" column="44" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
+              <folding>
+                <marker date="1512026409505" expanded="true" signature="317:346" ph="insert into zhihu_answer_text... " />
+                <marker date="1512026409505" expanded="true" signature="317:1413" ph="insert into zhihu_answer_text... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ZhihuArticleTextMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/resources/mybatis/ZhihuArticleTextMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="880">
+              <caret line="40" column="44" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
+              <folding>
+                <marker date="1512027041399" expanded="true" signature="320:350" ph="insert into zhihu_article_text... " />
+                <marker date="1512027041399" expanded="true" signature="320:359" ph="insert into zhihu_article_text... " />
+                <marker date="1512027041399" expanded="true" signature="320:1239" ph="insert into zhihu_article_text... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ZhihuArticleText.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/model/ZhihuArticleText.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="735">
+              <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -176,8 +173,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
         <option value="Mapper File" />
       </list>
     </option>
@@ -202,7 +199,6 @@
         <option value="$PROJECT_DIR$/ZhihuSpider/src/test/java/cn/mccreefei/zhihu/testRegex.java" />
         <option value="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/SleniumDownloader.java" />
         <option value="$PROJECT_DIR$/ZhihuSpider/src/main/resources/log4j2.xml" />
-        <option value="$PROJECT_DIR$/ZhihuSpider/src/test/java/cn/mccreefei/zhihu/RegexTest.java" />
         <option value="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/SeleniumDownloader.java" />
         <option value="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/constant/ZhihuConstant.java" />
         <option value="$PROJECT_DIR$/ZhihuSpider/src/main/resources/spring/spring-dao.xml" />
@@ -218,23 +214,32 @@
         <option value="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuArticleDao.java" />
         <option value="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuTextDetailDao.java" />
         <option value="$PROJECT_DIR$/ZhihuSpider/src/main/resources/mybatis/ZhihuTextDetailMapper.xml" />
-        <option value="$PROJECT_DIR$/ZhihuSpider/sql/zhihu.sql" />
         <option value="$PROJECT_DIR$/ZhihuSpider/src/main/resources/zhihu.properties" />
-        <option value="$PROJECT_DIR$/ZhihuSpider/src/test/java/cn/mccreefei/zhihu/DaoTest.java" />
         <option value="$PROJECT_DIR$/ZhihuSpider/src/test/java/cn/mccreefei/zhihu/PhantomJSTest.java" />
         <option value="$PROJECT_DIR$/ZhihuSpider/src/test/java/cn/mccreefei/zhihu/SeleniumTest.java" />
         <option value="$PROJECT_DIR$/ZhihuSpider/src/main/resources/mybatis/ZhihuUserMapper.xml" />
         <option value="$PROJECT_DIR$/ZhihuSpider/src/main/resources/mybatis/ZhihuArticleMapper.xml" />
-        <option value="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/ZhihuSpider.java" />
         <option value="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/model/ZhihuUser.java" />
         <option value="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/model/ZhihuTextDetail.java" />
         <option value="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/model/ZhihuArticle.java" />
         <option value="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/model/ZhihuAnswer.java" />
-        <option value="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/ZhihuPipeline.java" />
         <option value="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/ZhihuPageProcessor.java" />
         <option value="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/SimpleWebDriverPool.java" />
         <option value="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/SimpleSeleniumDownloader.java" />
         <option value="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/exception/ParseException.java" />
+        <option value="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/ZhihuSpider.java" />
+        <option value="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/ZhihuTextPageProcessor.java" />
+        <option value="$PROJECT_DIR$/ZhihuSpider/src/test/java/cn/mccreefei/zhihu/RegexTest.java" />
+        <option value="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuTextParser.java" />
+        <option value="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/model/ZhihuAnswerText.java" />
+        <option value="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/model/ZhihuArticleText.java" />
+        <option value="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuArticleTextDao.java" />
+        <option value="$PROJECT_DIR$/ZhihuSpider/src/main/resources/mybatis/ZhihuAnswerTextMapper.xml" />
+        <option value="$PROJECT_DIR$/ZhihuSpider/src/main/resources/mybatis/ZhihuArticleTextMapper.xml" />
+        <option value="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuAnswerTextDao.java" />
+        <option value="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/ZhihuPipeline.java" />
+        <option value="$PROJECT_DIR$/ZhihuSpider/src/test/java/cn/mccreefei/zhihu/DaoTest.java" />
+        <option value="$PROJECT_DIR$/ZhihuSpider/sql/zhihu.sql" />
       </list>
     </option>
   </component>
@@ -502,6 +507,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="parse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebSpider" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebSpider" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZhihuSpider" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zhihu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -608,6 +647,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebSpider" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebSpider" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZhihuSpider" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sql" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -630,79 +687,7 @@
       <recent name="E:\WebSpider\ZhihuSpider\phantomjs" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DaoTest.testGetUrlList">
-    <configuration default="false" name="ZhihuSpider" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="cn.mccreefei.zhihu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="cn.mccreefei.zhihu.ZhihuSpider" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="zhihu-spider" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="DaoTest.testAddArticle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="cn.mccreefei.zhihu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="zhihu-spider" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="cn.mccreefei.zhihu" />
-      <option name="MAIN_CLASS_NAME" value="cn.mccreefei.zhihu.DaoTest" />
-      <option name="METHOD_NAME" value="testAddArticle" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="DaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="cn.mccreefei.zhihu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="zhihu-spider" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="cn.mccreefei.zhihu" />
-      <option name="MAIN_CLASS_NAME" value="cn.mccreefei.zhihu.DaoTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.DaoTest.testAddAnswerText">
     <configuration default="false" name="DaoTest.testAddTextDetail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -742,6 +727,84 @@
       <option name="PACKAGE_NAME" value="cn.mccreefei.zhihu" />
       <option name="MAIN_CLASS_NAME" value="cn.mccreefei.zhihu.DaoTest" />
       <option name="METHOD_NAME" value="testGetUrlList" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="RegexTest.testRegex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="cn.mccreefei.zhihu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="zhihu-spider" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="cn.mccreefei.zhihu" />
+      <option name="MAIN_CLASS_NAME" value="cn.mccreefei.zhihu.RegexTest" />
+      <option name="METHOD_NAME" value="testRegex" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="DaoTest.testAddArticleText" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="cn.mccreefei.zhihu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="zhihu-spider" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="cn.mccreefei.zhihu" />
+      <option name="MAIN_CLASS_NAME" value="cn.mccreefei.zhihu.DaoTest" />
+      <option name="METHOD_NAME" value="testAddArticleText" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="DaoTest.testAddAnswerText" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="cn.mccreefei.zhihu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="zhihu-spider" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="cn.mccreefei.zhihu" />
+      <option name="MAIN_CLASS_NAME" value="cn.mccreefei.zhihu.DaoTest" />
+      <option name="METHOD_NAME" value="testAddAnswerText" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1205,19 +1268,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.ZhihuSpider" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.DaoTest.testAddArticle" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.DaoTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.DaoTest.testAddTextDetail" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.DaoTest.testGetUrlList" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.DaoTest.testAddTextDetail" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.DaoTest.testGetUrlList" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.RegexTest.testRegex" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.DaoTest.testAddArticleText" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.DaoTest.testAddAnswerText" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.DaoTest.testGetUrlList" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.DaoTest.testAddTextDetail" />
-        <item index="2" class="java.lang.String" itemvalue="Application.ZhihuSpider" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.DaoTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.DaoTest.testAddArticle" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.DaoTest.testAddAnswerText" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.DaoTest.testAddArticleText" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.RegexTest.testRegex" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.DaoTest.testGetUrlList" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.DaoTest.testAddTextDetail" />
       </list>
     </recent_temporary>
   </component>
@@ -1245,7 +1308,7 @@
       <workItem from="1511484110655" duration="1299000" />
       <workItem from="1511744767773" duration="6257000" />
       <workItem from="1511916832991" duration="5936000" />
-      <workItem from="1512003878225" duration="5500000" />
+      <workItem from="1512003878225" duration="13976000" />
     </task>
     <task id="LOCAL-00001" summary="添加分页知乎用户页面">
       <created>1510819052869</created>
@@ -1289,47 +1352,54 @@
       <option name="project" value="LOCAL" />
       <updated>1511342412122</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="添加文本详情表以及相关dao，format 代码">
+      <created>1512009793077</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1512009793077</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DaoTest_testAddTextDetail - 2017.11.30 at 10h 25m 35s.xml">
-      <configuration name="DaoTest.testAddTextDetail" configurationId="JUnit" />
+    <history-entry file="DaoTest_testAddAnswerText - 2017.11.30 at 15h 38m 08s.xml">
+      <configuration name="DaoTest.testAddAnswerText" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DaoTest_testAddTextDetail - 2017.11.30 at 10h 26m 19s.xml">
-      <configuration name="DaoTest.testAddTextDetail" configurationId="JUnit" />
+    <history-entry file="DaoTest_testAddAnswerText - 2017.11.30 at 15h 39m 46s.xml">
+      <configuration name="DaoTest.testAddAnswerText" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DaoTest_testAddTextDetail - 2017.11.30 at 10h 28m 26s.xml">
-      <configuration name="DaoTest.testAddTextDetail" configurationId="JUnit" />
+    <history-entry file="DaoTest_testAddArticleText - 2017.11.30 at 15h 37m 57s.xml">
+      <configuration name="DaoTest.testAddArticleText" configurationId="JUnit" />
     </history-entry>
     <history-entry file="DaoTest_testGetUrlList - 2017.11.30 at 10h 32m 38s.xml">
       <configuration name="DaoTest.testGetUrlList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SeleniumTest_testSelenium - 2017.11.17 at 13h 35m 33s.xml">
-      <configuration name="SeleniumTest.testSelenium" configurationId="JUnit" />
+    <history-entry file="RegexTest_testRegex - 2017.11.30 at 13h 59m 56s.xml">
+      <configuration name="RegexTest.testRegex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SeleniumTest_testSelenium - 2017.11.17 at 13h 38m 15s.xml">
-      <configuration name="SeleniumTest.testSelenium" configurationId="JUnit" />
+    <history-entry file="RegexTest_testRegex - 2017.11.30 at 14h 00m 17s.xml">
+      <configuration name="RegexTest.testRegex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SeleniumTest_testSelenium - 2017.11.17 at 13h 39m 00s.xml">
-      <configuration name="SeleniumTest.testSelenium" configurationId="JUnit" />
+    <history-entry file="RegexTest_testRegex - 2017.11.30 at 14h 00m 42s.xml">
+      <configuration name="RegexTest.testRegex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SeleniumTest_testSelenium - 2017.11.17 at 13h 40m 32s.xml">
-      <configuration name="SeleniumTest.testSelenium" configurationId="JUnit" />
+    <history-entry file="RegexTest_testRegex - 2017.11.30 at 14h 00m 51s.xml">
+      <configuration name="RegexTest.testRegex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SeleniumTest_testSelenium - 2017.11.17 at 13h 41m 50s.xml">
-      <configuration name="SeleniumTest.testSelenium" configurationId="JUnit" />
+    <history-entry file="RegexTest_testRegex - 2017.11.30 at 14h 01m 04s.xml">
+      <configuration name="RegexTest.testRegex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SeleniumTest_testSelenium - 2017.11.17 at 13h 42m 56s.xml">
-      <configuration name="SeleniumTest.testSelenium" configurationId="JUnit" />
+    <history-entry file="RegexTest_testRegex - 2017.11.30 at 14h 17m 40s.xml">
+      <configuration name="RegexTest.testRegex" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98745000" />
+    <option name="totallyTimeSpent" value="107221000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1338,13 +1408,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24946696" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24946696" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1407,7 +1477,8 @@
     <MESSAGE value="add simpleWebDriverPool supporting chrome、 phantomjs and remote driver" />
     <MESSAGE value="支持已有数据更新，以及文件缓存路径配置" />
     <MESSAGE value="数据库结构修改，增加待爬取url的优先度" />
-    <option name="LAST_COMMIT_MESSAGE" value="数据库结构修改，增加待爬取url的优先度" />
+    <MESSAGE value="添加文本详情表以及相关dao，format 代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加文本详情表以及相关dao，format 代码" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1430,12 +1501,6 @@
           <properties />
           <option name="timeStamp" value="20" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ZhihuSpider/src/test/java/cn/mccreefei/zhihu/DaoTest.java</url>
-          <line>95</line>
-          <properties />
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
       </breakpoints>
       <option name="time" value="24" />
     </breakpoint-manager>
@@ -1446,76 +1511,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/us/codecraft/webmagic-selenium/0.7.3/webmagic-selenium-0.7.3-sources.jar!/us/codecraft/webmagic/downloader/selenium/WebDriverPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1254">
-          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/test/java/cn/mccreefei/zhihu/RegexTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="96" selection-start-line="22" selection-start-column="96" selection-end-line="22" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phantomjsdriver.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4224">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/us/codecraft/webmagic-core/0.7.3/webmagic-core-0.7.3-sources.jar!/us/codecraft/webmagic/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/us/codecraft/webmagic-core/0.7.3/webmagic-core-0.7.3-sources.jar!/us/codecraft/webmagic/downloader/AbstractDownloader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-134">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/us/codecraft/webmagic-core/0.7.3/webmagic-core-0.7.3-sources.jar!/us/codecraft/webmagic/downloader/HttpClientDownloader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1399">
-          <caret line="55" column="32" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/us/codecraft/webmagic-core/0.7.3/webmagic-core-0.7.3-sources.jar!/us/codecraft/webmagic/Site.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4156">
-          <caret line="210" column="16" selection-start-line="210" selection-start-column="16" selection-end-line="210" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/us/codecraft/webmagic-core/0.7.3/webmagic-core-0.7.3-sources.jar!/us/codecraft/webmagic/scheduler/QueueScheduler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/us/codecraft/webmagic-core/0.7.3/webmagic-core-0.7.3-sources.jar!/us/codecraft/webmagic/Page.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1716">
-          <caret line="154" column="16" selection-start-line="154" selection-start-column="16" selection-end-line="154" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="150" column="25" selection-start-line="150" selection-start-column="25" selection-end-line="150" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/us/codecraft/webmagic-core/0.7.3/webmagic-core-0.7.3-sources.jar!/us/codecraft/webmagic/scheduler/PriorityScheduler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-22">
@@ -1555,16 +1550,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="946">
           <caret line="51" column="10" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuAnswerParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="968">
-          <caret line="54" column="107" selection-start-line="54" selection-start-column="107" selection-end-line="54" selection-end-column="107" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
@@ -1635,14 +1620,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/sql/zhihu.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
-          <caret line="52" column="11" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/resources/db.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
@@ -1655,14 +1632,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/test/java/cn/mccreefei/zhihu/DaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="863">
-          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1697,10 +1666,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-281">
           <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-          <folding>
-            <marker date="1512008899999" expanded="true" signature="313:342" ph="insert into zhihu_text_detail... " />
-            <marker date="1512008899999" expanded="true" signature="313:1571" ph="insert into zhihu_text_detail... " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1723,14 +1689,6 @@
             <marker date="1512008386192" expanded="true" signature="301:2124" ph="insert into zhihu_answer... " />
             <marker date="1512008386192" expanded="true" signature="2689:2724" ph="select answe... zhihu_answer" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/ZhihuSpider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1758,21 +1716,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/ZhihuPipeline.java">
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuAnswerDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+        <state relative-caret-position="286">
+          <caret line="13" column="45" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="45" />
           <folding>
-            <element signature="e#879#880#0" expanded="true" />
-            <element signature="e#917#918#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/ZhihuPageProcessor.java">
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuArticleDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="101" column="104" selection-start-line="101" selection-start-column="104" selection-end-line="101" selection-end-column="104" />
+        <state relative-caret-position="286">
+          <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuTextDetailDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuUserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/exception/ParseException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="e#179#180#0" expanded="false" />
+            <element signature="e#247#248#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/SimpleSeleniumDownloader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1403">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -1785,65 +1779,165 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/SimpleSeleniumDownloader.java">
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuAnswerParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1403">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        <state relative-caret-position="850">
+          <caret line="54" column="107" selection-start-line="54" selection-start-column="107" selection-end-line="54" selection-end-column="107" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/exception/ParseException.java">
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/ZhihuPageProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="e#179#180#0" expanded="true" />
-            <element signature="e#247#248#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuUserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+        <state relative-caret-position="1430">
+          <caret line="83" column="55" selection-start-line="83" selection-start-column="55" selection-end-line="83" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuTextDetailDao.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/us/codecraft/webmagic-core/0.7.3/webmagic-core-0.7.3-sources.jar!/us/codecraft/webmagic/ResultItems.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        <state relative-caret-position="638">
+          <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+          <folding>
+            <element signature="e#720#721#0" expanded="false" />
+            <element signature="e#749#750#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/test/java/cn/mccreefei/zhihu/RegexTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="30" column="46" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuArticleDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuAnswerDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="45" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/model/ZhihuTextDetail.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="66" column="30" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
+        <state relative-caret-position="348">
+          <caret line="53" column="65" selection-start-line="53" selection-start-column="65" selection-end-line="53" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/ZhihuTextPageProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="45" column="37" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1552#1553#0" expanded="true" />
+            <element signature="e#1596#1597#0" expanded="true" />
+            <element signature="e#1648#1649#0" expanded="true" />
+            <element signature="e#1694#1695#0" expanded="true" />
+            <element signature="e#1737#1738#0" expanded="true" />
+            <element signature="e#1764#1765#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/model/ZhihuAnswerText.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="58" column="30" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/model/ZhihuArticleText.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuArticleTextDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="69" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/resources/mybatis/ZhihuAnswerTextMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="46" column="44" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
+          <folding>
+            <marker date="1512026409505" expanded="true" signature="317:346" ph="insert into zhihu_answer_text... " />
+            <marker date="1512026409505" expanded="true" signature="317:1413" ph="insert into zhihu_answer_text... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/resources/mybatis/ZhihuArticleTextMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="880">
+          <caret line="40" column="44" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
+          <folding>
+            <marker date="1512027041399" expanded="true" signature="320:350" ph="insert into zhihu_article_text... " />
+            <marker date="1512027041399" expanded="true" signature="320:359" ph="insert into zhihu_article_text... " />
+            <marker date="1512027041399" expanded="true" signature="320:1239" ph="insert into zhihu_article_text... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/dao/ZhihuAnswerTextDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/ZhihuPipeline.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-760">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <folding>
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#843#844#0" expanded="true" />
+            <element signature="e#928#929#0" expanded="true" />
+            <element signature="e#978#979#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/test/java/cn/mccreefei/zhihu/DaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="98" column="74" selection-start-line="98" selection-start-column="74" selection-end-line="98" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/sql/zhihu.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="75" column="17" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/ZhihuSpider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="49" column="56" selection-start-line="49" selection-start-column="56" selection-end-line="49" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuTextParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
