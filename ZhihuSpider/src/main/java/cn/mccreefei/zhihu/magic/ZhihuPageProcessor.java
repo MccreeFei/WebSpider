@@ -81,18 +81,18 @@ public class ZhihuPageProcessor implements PageProcessor {
         try {
             if (sourceUrl.matches(FOLLOW_PAGE_REGEX)) {
                 //以/following结尾的url将分页url添加进队列
-                if (sourceUrl.endsWith("/following")) {
-                    List<String> pageList = page.getHtml().xpath("//div[@class='Profile-main']//div[@class='Pagination']" +
-                            "/button[@class='Button PaginationButton Button--plain']/text()").all();
-
-                    if (pageList != null && pageList.size() > 0) {
-                        int maxPage = Integer.parseInt(pageList.get(pageList.size() - 1));
-                        for (int i = 2; i <= maxPage; i++) {
-                            String pageUrl = sourceUrl + "?page=" + i;
-                            page.addTargetRequest(new Request(pageUrl).setPriority(20));
-                        }
-                    }
-                }
+//                if (sourceUrl.endsWith("/following")) {
+//                    List<String> pageList = page.getHtml().xpath("//div[@class='Profile-main']//div[@class='Pagination']" +
+//                            "/button[@class='Button PaginationButton Button--plain']/text()").all();
+//
+//                    if (pageList != null && pageList.size() > 0) {
+//                        int maxPage = Integer.parseInt(pageList.get(pageList.size() - 1));
+//                        for (int i = 2; i <= maxPage; i++) {
+//                            String pageUrl = sourceUrl + "?page=" + i;
+//                            page.addTargetRequest(new Request(pageUrl).setPriority(20));
+//                        }
+//                    }
+//                }
                 List<String> urlList = page.getHtml().xpath("//div[@id='Profile-following']//div[@class='List-item]" +
                         "//div[@class='ContentItem-head']//a[@class='UserLink-link]").links().all();
                 if (urlList != null && urlList.size() > 0) {

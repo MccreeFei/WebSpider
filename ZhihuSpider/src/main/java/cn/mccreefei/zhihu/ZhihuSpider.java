@@ -50,16 +50,16 @@ public class ZhihuSpider {
         Spider spider = Spider.create(zhihuPageProcessor).addPipeline(pipeline).addUrl(baseUrl)
                 .setDownloader(simpleSeleniumDownloader)
                 .thread(threadNum);
-//        try {
-//            String fileCachePath = resource.getString("FILE_CACHE_PATH");
-//            log.info("use FileCacheQueueScheduler and FILE_CACHE_PATH is : " + fileCachePath);
-//            spider.setScheduler(new FileCacheQueueScheduler(fileCachePath));
-//        }catch (MissingResourceException e){
-//            log.info("no FILE_CACHE_PATH founds, default use QueueSchedule");
-//        }
-//        spider.run();
-        spider.setScheduler(new PriorityScheduler()
-                .setDuplicateRemover(new BloomFilterDuplicateRemover(10000000))).run();
+        try {
+            String fileCachePath = resource.getString("FILE_CACHE_PATH");
+            log.info("use FileCacheQueueScheduler and FILE_CACHE_PATH is : " + fileCachePath);
+            spider.setScheduler(new FileCacheQueueScheduler(fileCachePath));
+        }catch (MissingResourceException e){
+            log.info("no FILE_CACHE_PATH founds, default use QueueSchedule");
+        }
+        spider.run();
+//        spider.setScheduler(new PriorityScheduler()
+//                .setDuplicateRemover(new BloomFilterDuplicateRemover(10000000))).run();
     }
 
     public static void main(String[] args) {
