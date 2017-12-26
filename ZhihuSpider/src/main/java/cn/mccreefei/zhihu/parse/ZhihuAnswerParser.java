@@ -104,7 +104,7 @@ public class ZhihuAnswerParser {
     private int getAgrees(String agreeText) throws NumberFormatException, IndexOutOfBoundsException, ParseException{
         if (agreeText == null) throw new ParseException("agreeText is null");
         int index = agreeText.indexOf(" 人赞同了该回答");
-        return Integer.parseInt(agreeText.substring(1, index));
+        return Integer.parseInt(agreeText.substring(1, index).replaceAll(",", ""));
     }
 
     private Integer getComments(String commentsText){
@@ -112,7 +112,7 @@ public class ZhihuAnswerParser {
         try {
             if (commentsText == null) throw new ParseException("commentsText is null");
             int index = commentsText.indexOf(" 条评论");
-            result =  Integer.valueOf(commentsText.substring(1, index));
+            result =  Integer.valueOf(commentsText.substring(1, index).replaceAll(",", ""));
         }catch (Exception e){
             log.warn("parse answer comments failed!", e);
         }

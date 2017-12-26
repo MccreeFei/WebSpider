@@ -65,7 +65,7 @@ public class ZhihuUserParser {
                 if (endIndex < 0) continue;
                 int startIndex = temp.indexOf("获得") + 3;
                 try {
-                    agrees = Integer.valueOf(temp.substring(startIndex, endIndex));
+                    agrees = Integer.valueOf(temp.substring(startIndex, endIndex).replaceAll(",", ""));
                 }catch (Exception e){
                     log.warn("获取赞同数失败,页面：{},出错原因：{}",url, e);
                 }
@@ -87,8 +87,8 @@ public class ZhihuUserParser {
                 int collectEndIndex = temp.indexOf("次收藏") - 1;
                 int collectStartIndex = thankEndIndex + 5;
                 try {
-                    result[0] = Integer.valueOf(temp.substring(thankStartIndex, thankEndIndex));
-                    result[1] = Integer.valueOf(temp.substring(collectStartIndex, collectEndIndex));
+                    result[0] = Integer.valueOf(temp.substring(thankStartIndex, thankEndIndex).replaceAll(",", ""));
+                    result[1] = Integer.valueOf(temp.substring(collectStartIndex, collectEndIndex).replaceAll(",", ""));
                 }catch (Exception e){
                     log.warn("获得感谢赞同数失败,页面：{},出错原因:{}",url, e);
                 }
@@ -103,8 +103,8 @@ public class ZhihuUserParser {
         if (list == null || list.size() != 2){
             log.warn("获取关注者失败,失败页面：{}", page.getRequest().getUrl());
         }else {
-            result[0] = Integer.valueOf(list.get(1));
-            result[1] = Integer.valueOf(list.get(0));
+            result[0] = Integer.valueOf(list.get(1).replaceAll(",", ""));
+            result[1] = Integer.valueOf(list.get(0).replaceAll(",", ""));
         }
         return result;
     }
