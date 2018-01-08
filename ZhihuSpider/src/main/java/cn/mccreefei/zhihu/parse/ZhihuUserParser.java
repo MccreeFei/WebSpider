@@ -99,7 +99,7 @@ public class ZhihuUserParser {
 
     private Integer[] getFollowersAndFollowees(Page page){
         Integer[] result = new Integer[2];
-        List<String> list = page.getHtml().xpath("//div[@class='Card FollowshipCard']//div[@class='NumberBoard-value']/text()").all();
+        List<String> list = page.getHtml().xpath("//div[@class='Card FollowshipCard']//strong[@class='NumberBoard-itemValue']//text()").all();
         if (list == null || list.size() != 2){
             log.warn("获取关注者失败,失败页面：{}", page.getRequest().getUrl());
         }else {

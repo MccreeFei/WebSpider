@@ -6,12 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87553ca9-d3db-427a-aa38-34087253aa6f" name="Default" comment="支持抓取回答和文章内容">
+    <list default="true" id="87553ca9-d3db-427a-aa38-34087253aa6f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuAnswerParser.java" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuAnswerParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuArticleParser.java" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuArticleParser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuUserParser.java" afterPath="$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuUserParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZhihuSpider/target/classes/zhihu.properties" afterPath="$PROJECT_DIR$/ZhihuSpider/target/classes/zhihu.properties" />
     </list>
     <ignored path="WebSpider.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,91 +31,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ZhihuTextPageProcessor.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ZhihuTextPageProcessor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/ZhihuTextPageProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-163">
+            <state relative-caret-position="528">
               <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ZhihuAnswerTextParser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuAnswerTextParser.java">
+      <file leaf-file-name="ZhihuPipeline.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/ZhihuPipeline.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="49">
-              <caret line="31" column="54" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
+            <state relative-caret-position="462">
+              <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ZhihuArticleParser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuArticleParser.java">
+      <file leaf-file-name="ZhihuPageProcessor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/ZhihuPageProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="104" column="87" selection-start-line="104" selection-start-column="87" selection-end-line="104" selection-end-column="87" />
+            <state relative-caret-position="359">
+              <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ZhihuUserParser.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ZhihuUserParser.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuUserParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="849">
-              <caret line="90" column="116" selection-start-line="90" selection-start-column="116" selection-end-line="90" selection-end-column="116" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ZhihuAnswerParser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuAnswerParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="893">
-              <caret line="114" column="88" selection-start-line="114" selection-start-column="88" selection-end-line="114" selection-end-column="88" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ZhihuSpider.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/ZhihuSpider.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="61" column="89" selection-start-line="61" selection-start-column="89" selection-end-line="61" selection-end-column="89" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegexTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/test/java/cn/mccreefei/zhihu/RegexTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="30" column="46" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ZhihuTextSpider.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/ZhihuTextSpider.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="57" column="83" selection-start-line="57" selection-start-column="83" selection-end-line="57" selection-end-column="83" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="zhihu.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/resources/zhihu.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="21" />
+            <state relative-caret-position="299">
+              <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -256,9 +203,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1105,7 +1052,11 @@
       <workItem from="1513229370564" duration="1636000" />
       <workItem from="1513488050886" duration="827000" />
       <workItem from="1513732017991" duration="1867000" />
-      <workItem from="1514253142175" duration="1526000" />
+      <workItem from="1514253142175" duration="9594000" />
+      <workItem from="1514337803410" duration="1493000" />
+      <workItem from="1514679599117" duration="1042000" />
+      <workItem from="1514853650838" duration="608000" />
+      <workItem from="1515377276725" duration="213000" />
     </task>
     <task id="LOCAL-00001" summary="添加分页知乎用户页面">
       <created>1510819052869</created>
@@ -1170,7 +1121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512548799887</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="知乎网站更新后的部分微调">
+      <created>1514254726684</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1514254726684</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1206,11 +1164,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134813000" />
+    <option name="totallyTimeSpent" value="146237000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1219,13 +1177,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3336945" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3336945" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2510661" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25053304" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1292,28 +1250,17 @@
     <MESSAGE value="添加文本详情表以及相关dao，format 代码" />
     <MESSAGE value="数据库文本表调整" />
     <MESSAGE value="支持抓取回答和文章内容" />
-    <option name="LAST_COMMIT_MESSAGE" value="支持抓取回答和文章内容" />
+    <MESSAGE value="知乎网站更新后的部分微调" />
+    <option name="LAST_COMMIT_MESSAGE" value="知乎网站更新后的部分微调" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuAnswerParser.java</url>
-          <line>43</line>
-          <properties />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ZhihuSpider/src/test/java/cn/mccreefei/zhihu/PhantomJSTest.java</url>
           <line>25</line>
           <properties />
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/ZhihuPageProcessor.java</url>
-          <line>97</line>
-          <properties />
-          <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/ZhihuTextSpider.java</url>
@@ -1322,7 +1269,7 @@
           <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="34" />
+      <option name="time" value="36" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -1339,7 +1286,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
           <caret line="32" column="59" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1347,14 +1293,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="479">
           <caret line="47" column="93" selection-start-line="47" selection-start-column="93" selection-end-line="47" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/resources/db.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -1445,20 +1383,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/SimpleSeleniumDownloader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1403">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/SimpleWebDriverPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="67" column="50" selection-start-line="67" selection-start-column="50" selection-end-line="67" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/us/codecraft/webmagic-core/0.7.3/webmagic-core-0.7.3-sources.jar!/us/codecraft/webmagic/ResultItems.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="638">
@@ -1538,17 +1462,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/ZhihuPipeline.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1200">
-          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-          <folding>
-            <element signature="e#928#929#0" expanded="false" />
-            <element signature="e#978#979#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ZhihuSpider/sql/zhihu.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1650">
@@ -1577,29 +1490,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/ZhihuPageProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1848">
-          <caret line="102" column="21" selection-start-line="102" selection-start-column="21" selection-end-line="102" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/resources/zhihu.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/resources/mybatis/ZhihuAnswerTextMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1012">
           <caret line="46" column="44" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
-          <folding>
-            <marker date="1512026409505" expanded="true" signature="317:1413" ph="insert into zhihu_answer_text... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1607,71 +1501,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1928">
           <caret line="98" column="74" selection-start-line="98" selection-start-column="74" selection-end-line="98" selection-end-column="74" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/test/java/cn/mccreefei/zhihu/AgreeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuAnswerParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="893">
-          <caret line="114" column="88" selection-start-line="114" selection-start-column="88" selection-end-line="114" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuAnswerTextParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="31" column="54" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuArticleParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="104" column="87" selection-start-line="104" selection-start-column="87" selection-end-line="104" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuUserParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="849">
-          <caret line="90" column="116" selection-start-line="90" selection-start-column="116" selection-end-line="90" selection-end-column="116" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuArticleTextParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="28" column="53" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/ZhihuSpider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="61" column="89" selection-start-line="61" selection-start-column="89" selection-end-line="61" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/test/java/cn/mccreefei/zhihu/AgreeTest.java" />
     <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/test/java/cn/mccreefei/zhihu/RegexTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="366">
           <caret line="30" column="46" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1683,10 +1520,97 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/resources/zhihu.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/resources/db.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuAnswerTextParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="31" column="54" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuArticleParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-185">
+          <caret line="104" column="87" selection-start-line="104" selection-start-column="87" selection-end-line="104" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuArticleTextParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="28" column="53" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/ZhihuTextPageProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-163">
+        <state relative-caret-position="528">
           <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/SimpleSeleniumDownloader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-193">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuAnswerParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1923">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/ZhihuSpider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="61" column="89" selection-start-line="61" selection-start-column="89" selection-end-line="61" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/ZhihuPipeline.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/SimpleWebDriverPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="67" column="50" selection-start-line="67" selection-start-column="50" selection-end-line="67" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/magic/ZhihuPageProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZhihuSpider/src/main/java/cn/mccreefei/zhihu/parse/ZhihuUserParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
           <folding />
         </state>
       </provider>
